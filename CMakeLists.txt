@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.25)
 project(runtime)
-
+set(CMAKE_CXX_FLAGS -static-libgcc)
+set(CMAKE_CXX_FLAGS -static-libstdc++)
 set(CMAKE_CXX_STANDARD 17)
-
+set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 add_executable(runtime main.cpp cpu.cpp cpu.h microcode.cpp microcode.h)
+add_library( ldr SHARED vmldr/ldr.cpp vmldr/ldr.h vmldr/ldr.h)
+include(GenerateExportHeader)
+generate_export_header(ldr)
+target_link_libraries(runtime PRIVATE ldr)
