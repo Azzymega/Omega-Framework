@@ -10,7 +10,7 @@ void firmware::interpret(void * image, int imageSize, cpu centralPU) {
     centralPU.instructionPointer = &centralPU.memory[0];
     for (int i = 0; i <= imageSize; ++i) {
         switch (*centralPU.instructionPointer) {
-            case microcode::halt :
+            case microcode::hlt :
                 std::cout << "halt";
                 i+=1;
                 break;
@@ -29,7 +29,7 @@ void firmware::interpret(void * image, int imageSize, cpu centralPU) {
                 centralPU.instructionPointer+=3;
                 i+=3;
                 break;
-            case microcode::cmov :
+            case microcode::cmv :
                 centralPU.registers[(*(centralPU.instructionPointer+1))-1] = *(centralPU.instructionPointer+2);
                 centralPU.instructionPointer+=3;
                 i+=3;

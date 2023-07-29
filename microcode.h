@@ -15,8 +15,8 @@ enum registers {
 
 enum microcode {
     mov = 1,
-    cmov = 5,
-    halt = 0,
+    cmv = 5,
+    hlt = 0,
     jmp = 2,
     add = 3,
     sub = 4,

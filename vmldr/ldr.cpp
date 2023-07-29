@@ -15,3 +15,9 @@ loader::loader(const std::string& path) {
     this->path = path;
     this->stream = std::ifstream(path);
 }
+
+std::string loader::loadLine() {
+    std::string str;
+    std::getline(this->stream,str);
+    return str;
+}

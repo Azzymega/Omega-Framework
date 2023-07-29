@@ -11,6 +11,7 @@ struct loader {
     std::ifstream stream;
     std::string path;
     loader(const std::string&);
+    std::string loadLine();
 };
 
 LDR_EXPORT void load(const char* path, char* dest);
