@@ -4,3 +4,6 @@
 
 #include "AbstractData.h"
 
+AbstractData::AbstractData() {
+    this->Data = std::vector<char>();
+}

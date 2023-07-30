@@ -13,7 +13,7 @@ add_library( rnt SHARED librnt/cpu.cpp librnt/cpu.h librnt/microcode.cpp librnt/
 add_library( wrt SHARED libwrt/wrtr.cpp libwrt/wrtr.h)
 add_library( cmp SHARED asmcmplr/image.cpp asmcmplr/image.h)
 add_library( jit SHARED libjit/cmplr.cpp libjit/cmplr.h libjit/image.cpp libjit/image.h libjit/cmplr.h)
-add_library( tkn SHARED libcmp/token.cpp libcmp/token.h libcmp/tokenFactory.cpp libcmp/tokenFactory.h libtkn/mov.cpp libtkn/mov.h libtkn/cmv.cpp libtkn/cmv.h libtkn/hlt.cpp libtkn/hlt.h libtkn/jmp.cpp libtkn/jmp.h libtkn/add.cpp libtkn/add.h libtkn/sub.cpp libtkn/sub.h)
+add_library( tkn SHARED libcmp/token.cpp libcmp/token.h libcmp/tokenFactory.cpp libcmp/tokenFactory.h libtkn/mov.cpp libtkn/mov.h libtkn/cmv.cpp libtkn/cmv.h libtkn/hlt.cpp libtkn/hlt.h libtkn/jmp.cpp libtkn/jmp.h libtkn/add.cpp libtkn/add.h libtkn/sub.cpp libtkn/sub.h libtkn/SCL.cpp libtkn/SCL.h)
 target_link_libraries(asmcmplr PUBLIC ldr)
 target_link_libraries(asmcmplr PUBLIC cmp)
 target_link_libraries(jit PUBLIC ldr)

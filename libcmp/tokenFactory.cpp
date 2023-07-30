@@ -8,6 +8,7 @@
 #include "../libtkn/cmv.h"
 #include "../libtkn/mov.h"
 #include "../libtkn/sub.h"
+#include "../libtkn/SCL.h"
 
 void tokenFactory::analyze(std::string def) {
     std::string bfr = def;
@@ -32,8 +33,8 @@ void tokenFactory::analyze(std::string def) {
     else if (microcode == "sub"){
         tokens.push_back(asmcmplr::tokens::sub(firstByte,secondByte));
     }
-    else{
-        
+    else if (microcode == "scl"){
+        tokens.push_back(asmcmplr::tokens::SCL(firstByte,secondByte));
     }
 }
 
@@ -103,6 +104,11 @@ image tokenFactory::createLoadableImage() {
                 break;
             case microcode::sub:
                 img.byteArray.push_back(microcode::sub);
+                img.byteArray.push_back(token.returnFirst());
+                img.byteArray.push_back(token.returnSecond());
+                break;
+            case microcode::scl:
+                img.byteArray.push_back(microcode::scl);
                 img.byteArray.push_back(token.returnFirst());
                 img.byteArray.push_back(token.returnSecond());
                 break;

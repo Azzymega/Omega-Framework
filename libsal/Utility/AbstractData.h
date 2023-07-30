@@ -10,6 +10,7 @@
 
 struct AbstractData {
     std::vector<char> Data;
+    AbstractData();
 };
 
 

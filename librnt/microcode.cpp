@@ -46,11 +46,11 @@ void firmware::interpret(void * image, int imageSize, cpu centralPU) {
                 i+=2;
                 break;
             case microcode::scl :
-                switch (centralPU.registers[centralPU.memory[instructionNumber+1]]) {
+                switch (centralPU.memory[instructionNumber+1]) {
                     case SoftwareAbstractions::Get :
                         Manager.AddSystemCall(SoftwareAbstractions::Get,*Data);
                     case SoftwareAbstractions::Print :
-                        Data->Data.push_back(centralPU.registers[centralPU.memory[instructionNumber+2]]);
+                        Data->Data.push_back(centralPU.memory[instructionNumber+2]);
                         Manager.AddSystemCall(SoftwareAbstractions::Print, *Data);
                 }
                 Manager.ExecuteAllCalls(Data);

@@ -12,7 +12,7 @@
 
 class SystemCallManager {
 private:
-    std::vector<SystemCall> SystemCallsList;
+    std::vector<SystemCall*> SystemCallsList;
 public:
     SystemCall ReturnSystemCall(int);
     void AddSystemCall(SoftwareAbstractions,AbstractData);

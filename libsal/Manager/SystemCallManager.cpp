@@ -7,22 +7,22 @@
 #include "../SystemCalls/PrintSystemCall.h"
 
 SystemCall SystemCallManager::ReturnSystemCall(int Index) {
-    return SystemCallsList.at(Index);
+    return *SystemCallsList.at(Index);
 }
 
 void SystemCallManager::AddSystemCall(SoftwareAbstractions SystemCallID, AbstractData Data) {
     switch (SystemCallID) {
         case SoftwareAbstractions::Get :
-            SystemCallsList.push_back(GetSystemCall());
+            SystemCallsList.push_back(new GetSystemCall());
             break;
         case SoftwareAbstractions::Print :
-            SystemCallsList.push_back(PrintSystemCall(Data.Data[0]));
+            SystemCallsList.push_back(new PrintSystemCall(Data.Data[0]));
     }
 }
 
 void SystemCallManager::ExecuteAllCalls(AbstractData* Output) {
-    for (SystemCall Call : SystemCallsList) {
-        Call.Execute();
-        Output->Data.push_back(*(char*)Call.ReturnRequest());
+    for (SystemCall* Call : SystemCallsList) {
+        Call->Execute();
+        Output->Data.push_back(*(char*)Call->ReturnRequest());
     }
 }
