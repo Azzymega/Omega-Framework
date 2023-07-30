@@ -14,12 +14,13 @@ enum registers {
 };
 
 enum microcode {
-    mov = 1,
-    cmv = 5,
     hlt = 0,
+    mov = 1,
     jmp = 2,
     add = 3,
     sub = 4,
+    cmv = 5,
+    scl = 6
 };
 
 struct firmware {

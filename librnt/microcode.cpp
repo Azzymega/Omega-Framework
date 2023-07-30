@@ -4,8 +4,12 @@
 
 #include <iostream>
 #include "microcode.h"
+#include "../libsal/Utility/AbstractData.h"
+#include "../libsal/Manager/SystemCallManager.h"
 
 void firmware::interpret(void * image, int imageSize, cpu centralPU) {
+    auto* Data = new AbstractData();
+    SystemCallManager Manager = SystemCallManager();
     memcpy(&centralPU.memory[0],image,imageSize);
     int instructionNumber = 0;
     centralPU.instructionPointer = &centralPU.memory[instructionNumber];
@@ -38,6 +42,18 @@ void firmware::interpret(void * image, int imageSize, cpu centralPU) {
                 break;
             case microcode::sub :
                 centralPU.registers[centralPU.memory[instructionNumber+1]] -= centralPU.registers[centralPU.memory[instructionNumber+2]];
+                instructionNumber+=3;
+                i+=2;
+                break;
+            case microcode::scl :
+                switch (centralPU.registers[centralPU.memory[instructionNumber+1]]) {
+                    case SoftwareAbstractions::Get :
+                        Manager.AddSystemCall(SoftwareAbstractions::Get,*Data);
+                    case SoftwareAbstractions::Print :
+                        Data->Data.push_back(centralPU.registers[centralPU.memory[instructionNumber+2]]);
+                        Manager.AddSystemCall(SoftwareAbstractions::Print, *Data);
+                }
+                Manager.ExecuteAllCalls(Data);
                 instructionNumber+=3;
                 i+=2;
                 break;

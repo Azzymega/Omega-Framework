@@ -7,8 +7,8 @@
 
 
 struct cpu {
-    char memory[256];
-    char registers[3];
+    char memory[64000];
+    char registers[10];
     char* instructionPointer;
 };
 
