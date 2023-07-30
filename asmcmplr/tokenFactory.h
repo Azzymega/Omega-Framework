@@ -9,10 +9,14 @@
 #include <vector>
 #include <string>
 #include "token.h"
+#include "image.h"
 
 struct tokenFactory {
     std::vector<token> tokens;
     void analyze(std::string);
+    char getFirstByte(std::string);
+    char getSecondByte(std::string);
+    image createLoadableImage();
 };
 
 

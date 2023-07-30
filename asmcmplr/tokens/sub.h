@@ -7,10 +7,13 @@
 
 
 #include "../token.h"
+namespace asmcmplr::tokens{
+    class sub : public token{
+    public:
+        sub(char,char);
+    };
+}
 
-class sub : public token{
-
-};
 
 
 #endif //RUNTIME_SUB_H

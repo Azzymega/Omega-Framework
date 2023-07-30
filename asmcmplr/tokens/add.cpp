@@ -3,3 +3,11 @@
 //
 
 #include "add.h"
+#include "../../microcode.h"
+
+asmcmplr::tokens::add::add(char firstByte, char secondByte) : token() {
+    this->code = microcode::add;
+    data[0] = firstByte;
+    data[1] = secondByte;
+}
+

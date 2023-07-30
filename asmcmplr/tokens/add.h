@@ -7,10 +7,12 @@
 
 
 #include "../token.h"
-
-class add : public token{
-
-};
+namespace asmcmplr::tokens{
+    class add : public token{
+    public:
+        add(char,char);
+    };
+}
 
 
 #endif //RUNTIME_ADD_H

@@ -4,11 +4,14 @@
 
 #ifndef RUNTIME_CMV_H
 #define RUNTIME_CMV_H
+#include "../token.h"
+namespace asmcmplr::tokens{
+    class cmv : public token{
+    public:
+        cmv(char,char);
+    };
+}
 
-
-class cmv {
-
-};
 
 
 #endif //RUNTIME_CMV_H

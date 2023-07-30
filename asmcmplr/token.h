@@ -8,9 +8,13 @@
 #define NOCOMMAND 0
 
 class token {
-private:
+protected:
+    char data[2];
     microcode code;
-    char arguments[2];
+public:
+    char returnFirst();
+    char returnSecond();
+    microcode returnMicroCode();
 };
 
 

@@ -3,3 +3,9 @@
 //
 
 #include "hlt.h"
+#include "../../microcode.h"
+
+
+asmcmplr::tokens::hlt::hlt() {
+    this->code = microcode::hlt;
+};

@@ -6,7 +6,7 @@
 #define RUNTIME_LOADER_H
 
 #include <fstream>
-#include "../cmake-build-debug/ldr_export.h"
+
 struct loader {
     std::ifstream stream;
     std::string path;
@@ -14,6 +14,6 @@ struct loader {
     std::string loadLine();
 };
 
-LDR_EXPORT void load(const char* path, char* dest);
+void load(const char* path, char* dest);
 
 #endif //RUNTIME_LOADER_H

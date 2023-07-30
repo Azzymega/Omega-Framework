@@ -3,3 +3,10 @@
 //
 
 #include "jmp.h"
+#include "../../microcode.h"
+
+asmcmplr::tokens::jmp::jmp(char jmpAdress) : token() {
+    this->code = microcode::jmp;
+    data[0] = jmpAdress;
+}
+

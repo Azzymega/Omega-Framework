@@ -3,3 +3,15 @@
 //
 
 #include "token.h"
+
+microcode token::returnMicroCode() {
+    return code;
+}
+
+char token::returnFirst() {
+    return data[0];
+}
+
+char token::returnSecond() {
+    return data[1];
+}

@@ -24,6 +24,6 @@ enum microcode {
 
 struct firmware {
     static void interpret(void*, int, cpu);
-
-#endif //RUNTIME_MICROCODE_H
 };
+#endif //RUNTIME_MICROCODE_H
+

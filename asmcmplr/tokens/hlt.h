@@ -7,10 +7,14 @@
 
 
 #include "../token.h"
+namespace asmcmplr::tokens{
+    class hlt : public token{
+    public:
+        hlt();
+    };
+}
 
-class hlt : public token{
 
-};
 
 
 #endif //RUNTIME_HLT_H

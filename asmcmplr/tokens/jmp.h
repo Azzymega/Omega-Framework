@@ -7,10 +7,13 @@
 
 
 #include "../token.h"
+namespace asmcmplr::tokens{
+    class jmp : public token{
+    public:
+        jmp(char);
+    };
+}
 
-class jmp : public token{
-
-};
 
 
 #endif //RUNTIME_JMP_H
