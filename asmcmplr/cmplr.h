@@ -19,7 +19,7 @@ int main(){
     //loader ldr = loader(path);
     std::string streamLine;
     image img;
-    wrtr writer = wrtr(imagePath);
+    wrtr* writer = new wrtr(imagePath);
     std::vector<std::string> lines;
     tokenFactory factory = tokenFactory();
     std::ifstream str(path);
@@ -33,8 +33,9 @@ int main(){
     }
     img = factory.createLoadableImage();
     for (char i : img.byteArray) {
-        writer.writeByte(i);
+        writer->writeByte(i);
     }
+    free(writer);
     return 0;
 }
 
