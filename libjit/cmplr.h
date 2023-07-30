@@ -4,14 +4,14 @@
 
 #ifndef RUNTIME_CMPLR_H
 #define RUNTIME_CMPLR_H
-
+#include "image.h"
 #include "../libldr/ldr.h"
-#include "../libcmp/tokenFactory.h"
 #include "../libwrt/wrtr.h"
+#include "../libcmp/tokenFactory.h"
 #include <iostream>
 #include <vector>
 
-int main(){
+void jit(){
     std::string path;
     std::string imagePath = "assembly.ort";
     std::cout << "assembly file path:" << std::endl;
@@ -32,12 +32,17 @@ int main(){
         factory.analyze(line);
     }
     img = factory.createLoadableImage();
-    for (char i : img.byteArray) {
-        writer.writeByte(i);
+    char* image = static_cast<char *>(malloc(img.byteArray.size() * sizeof(char)));
+    for (int i = 0; i < img.byteArray.size(); i++){
+        char* imagePointer = image;
+        imagePointer+=i;
+        *imagePointer = img.byteArray.at(i);
     }
-    std::cout << "compilation success" << std::endl;
+    cpu centralProcessingUnit = cpu();
+    firmware cpuMicrocode = firmware();
+    cpuMicrocode.interpret(image,img.byteArray.size() * sizeof(char),centralProcessingUnit);
+    std::cout << std::endl;
     system("pause");
-    return 0;
 }
 
 

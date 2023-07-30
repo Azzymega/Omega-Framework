@@ -3,7 +3,7 @@
 //
 
 #include "cmv.h"
-#include "../runtime/microcode.h"
+#include "../librnt/microcode.h"
 
 asmcmplr::tokens::cmv::cmv(char registr, char constantByte) : token() {
     this->code = microcode::cmv;

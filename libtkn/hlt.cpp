@@ -3,7 +3,7 @@
 //
 
 #include "hlt.h"
-#include "../runtime/microcode.h"
+#include "../librnt/microcode.h"
 
 
 asmcmplr::tokens::hlt::hlt() {
