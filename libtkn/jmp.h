@@ -6,7 +6,8 @@
 #define RUNTIME_JMP_H
 
 
-#include "../token.h"
+#include "../libcmp/token.h"
+
 namespace asmcmplr::tokens{
     class jmp : public token{
     public:

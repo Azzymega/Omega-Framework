@@ -2,15 +2,16 @@
 // Created by Danil on 29.07.2023.
 //
 #include "tokenFactory.h"
-#include "tokens/hlt.h"
-#include "tokens/jmp.h"
-#include "tokens/add.h"
-#include "tokens/cmv.h"
-#include "tokens/mov.h"
-#include "tokens/sub.h"
+#include "../libtkn/hlt.h"
+#include "../libtkn/jmp.h"
+#include "../libtkn/add.h"
+#include "../libtkn/cmv.h"
+#include "../libtkn/mov.h"
+#include "../libtkn/sub.h"
 
 void tokenFactory::analyze(std::string def) {
-    std::string microcode = def.erase(3,def.length()-3);
+    std::string bfr = def;
+    std::string microcode = bfr.erase(3,def.length()-3);
     char firstByte = getFirstByte(def);
     char secondByte = getSecondByte(def);
     if (microcode == "hlt"){
@@ -46,7 +47,11 @@ char tokenFactory::getFirstByte(std::string def) {
             arg+=def[i];
         }
     }
-    return std::stoi(arg);
+    if (arg == ""){
+        return 0;
+    }
+    int x = std::stoi(arg);
+    return (char)x;
 }
 
 char tokenFactory::getSecondByte(std::string def) {
@@ -58,10 +63,16 @@ char tokenFactory::getSecondByte(std::string def) {
             break;
         }
     }
-    for (int i = commaIndex; i < def.length(); ++i) {
-        arg+=def[i];
+    if (commaIndex != 0){
+        for (int i = commaIndex+1; i < def.length(); ++i) {
+            arg+=def[i];
+        }
     }
-    return std::stoi(arg);
+    if (arg == ""){
+        return 0;
+    }
+    int x = std::stoi(arg);
+    return (char)x;
 }
 
 image tokenFactory::createLoadableImage() {

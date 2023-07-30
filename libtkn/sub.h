@@ -6,7 +6,7 @@
 #define RUNTIME_SUB_H
 
 
-#include "../token.h"
+#include "../libcmp/token.h"
 namespace asmcmplr::tokens{
     class sub : public token{
     public:

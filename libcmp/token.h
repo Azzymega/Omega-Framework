@@ -4,7 +4,7 @@
 
 #ifndef RUNTIME_TOKEN_H
 #define RUNTIME_TOKEN_H
-#include "../microcode.h"
+#include "../runtime/microcode.h"
 #define NOCOMMAND 0
 
 class token {

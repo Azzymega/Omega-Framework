@@ -5,7 +5,7 @@
 #ifndef RUNTIME_MOV_H
 #define RUNTIME_MOV_H
 
-#include "../token.h"
+#include "../libcmp/token.h"
 
 namespace asmcmplr::tokens{
     class mov : public token{

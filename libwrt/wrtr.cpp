@@ -12,3 +12,7 @@ wrtr::wrtr(const std::string& path) {
 void wrtr::writeString(std::string bytes) {
     this->wrtstrm << bytes;
 }
+
+void wrtr::writeByte(char byte) {
+    this->wrtstrm << byte;
+}

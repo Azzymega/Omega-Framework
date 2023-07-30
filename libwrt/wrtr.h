@@ -14,6 +14,7 @@ struct wrtr {
     std::string path;
     wrtr(const std::string&);
     void writeString(std::string);
+    void writeByte(char);
 };
 
 

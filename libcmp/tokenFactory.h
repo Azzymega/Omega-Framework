@@ -9,7 +9,7 @@
 #include <vector>
 #include <string>
 #include "token.h"
-#include "image.h"
+#include "../asmcmplr/image.h"
 
 struct tokenFactory {
     std::vector<token> tokens;

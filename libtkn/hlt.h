@@ -6,7 +6,7 @@
 #define RUNTIME_HLT_H
 
 
-#include "../token.h"
+#include "../libcmp/token.h"
 namespace asmcmplr::tokens{
     class hlt : public token{
     public:

@@ -3,7 +3,7 @@
 //
 
 #include "mov.h"
-#include "../../microcode.h"
+#include "../runtime/microcode.h"
 
 asmcmplr::tokens::mov::mov(char settableRegister, char dataDonor) : token() {
     this->code = microcode::mov;
