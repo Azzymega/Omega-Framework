@@ -2,13 +2,19 @@ cmake_minimum_required(VERSION 3.25)
 project(librnt)
 set(CMAKE_CXX_FLAGS -static-libgcc)
 set(CMAKE_CXX_FLAGS -static-libstdc++)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17) # вычистить мусор
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
-add_executable(asmcmplr asmcmplr/cmplr.cpp asmcmplr/cmplr.h libldr/ldr.h libldr/ldr.cpp)
+add_executable(asmcmplr asmcmplr/cmplr.cpp asmcmplr/cmplr.h libldr/ldr.h libldr/ldr.cpp libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Depository.cpp libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Depository.h libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Operation.cpp libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Operation.h libNEXTRUNTIME/Runtime/Core/Runtime.cpp libNEXTRUNTIME/Runtime/Core/Runtime.h libNEXTRUNTIME/Runtime/Analyzer/Abstract/StaticAnalyzer.cpp libNEXTRUNTIME/Runtime/Analyzer/Abstract/StaticAnalyzer.h libNEXTRUNTIME/Runtime/Analyzer/Utility/ROMAnalyzer.cpp libNEXTRUNTIME/Runtime/Analyzer/Utility/ROMAnalyzer.h libNEXTRUNTIME/Architecture/PrimitiveOperations/HLT.cpp libNEXTRUNTIME/Architecture/PrimitiveOperations/HLT.h libNEXTRUNTIME/Architecture/PrimitiveOperations/MOV.cpp libNEXTRUNTIME/Architecture/PrimitiveOperations/MOV.h libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Archive.cpp libNEXTRUNTIME/Architecture/PrimitiveAbstractions/Archive.h libNEXTRUNTIME/Architecture/PrimitiveOperations/ADD.cpp libNEXTRUNTIME/Architecture/PrimitiveOperations/ADD.h libNEXTRUNTIME/Architecture/PrimitiveOperations/JMP.cpp libNEXTRUNTIME/Architecture/PrimitiveOperations/JMP.h)
 add_executable(bootstrap bootstrap/bootstrap.cpp bootstrap/bootstrap.h librnt/microcode.cpp)
 add_executable(asmjit asmjit/main.cpp)
 add_library( ldr SHARED libldr/ldr.cpp libldr/ldr.h)
-add_library( sal SHARED libsal/BasicAbstractions/SystemCall.cpp libsal/BasicAbstractions/SystemCall.h libsal/BasicAbstractions/SoftwareAbstractionLayer.cpp libsal/BasicAbstractions/SoftwareAbstractionLayer.h libsal/SystemCalls/PrintSystemCall.cpp libsal/SystemCalls/PrintSystemCall.h libsal/SystemCalls/GetSystemCall.cpp libsal/SystemCalls/GetSystemCall.h libsal/Manager/SystemCallManager.cpp libsal/Manager/SystemCallManager.h libsal/Utility/AbstractData.cpp libsal/Utility/AbstractData.h)
+add_library( NEXTr SHARED libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Register.cpp libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Register.h libNEXTRUNTIME/Architecture/ArchitecturalDefines/RegistersType.cpp libNEXTRUNTIME/Architecture/ArchitecturalDefines/RegistersType.h libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Stack.cpp libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Stack.h libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Cell.cpp libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Cell.h libNEXTRUNTIME/Runtime/DataTypes/ROM.cpp libNEXTRUNTIME/Runtime/DataTypes/ROM.h libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Registry.cpp libNEXTRUNTIME/Architecture/PrimitiveDataTypes/Registry.h)
+add_library( sal SHARED libsal/BasicAbstractions/SystemCall.cpp libsal/BasicAbstractions/SystemCall.h
+        libsal/BasicAbstractions/SoftwareAbstractionLayer.cpp
+        libsal/BasicAbstractions/SoftwareAbstractionLayer.h
+        libsal/SystemCalls/PrintSystemCall.cpp libsal/SystemCalls/PrintSystemCall.h libsal/SystemCalls/GetSystemCall.cpp
+        libsal/SystemCalls/GetSystemCall.h libsal/Manager/SystemCallManager.cpp libsal/Manager/SystemCallManager.h
+        libsal/Utility/AbstractData.cpp libsal/Utility/AbstractData.h)
 add_library( rnt SHARED librnt/cpu.cpp librnt/cpu.h librnt/microcode.cpp librnt/microcode.h libldr/ldr.h)
 add_library( wrt SHARED libwrt/wrtr.cpp libwrt/wrtr.h)
 add_library( cmp SHARED asmcmplr/image.cpp asmcmplr/image.h)
