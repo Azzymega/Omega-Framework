@@ -40,3 +40,15 @@ SystemCallManager *Runtime::ReturnSystemCallManager() {
     return &SCM;
 }
 
+Word Runtime::GetStackTop() {
+    return Stack.top();
+}
+
+void Runtime::PopStack() {
+    Stack.pop();
+}
+
+void Runtime::PushToStack(Word Data) {
+    Stack.push(Data);
+}
+

@@ -11,8 +11,13 @@
 #include "../OmegaNaIGENComponent/SCL.h"
 
 void tokenFactory::analyze(std::string def) {
-    std::string bfr = def;
-    std::string microcode = bfr.erase(3,def.length()-3);
+    std::string microcode;
+    for (char byte : def){
+        if (byte != ' '){
+            microcode+=byte;
+        }
+        break;
+    }
     char firstByte = getFirstByte(def);
     char secondByte = getSecondByte(def);
     if (microcode == "hlt"){

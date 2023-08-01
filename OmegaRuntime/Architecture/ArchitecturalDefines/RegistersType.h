@@ -14,7 +14,9 @@ enum Microcode {
     OP_ADD = 3,
     OP_SUB = 4,
     OP_CMV = 5,
-    OP_SCL = 6
+    OP_SCL = 6,
+    OP_PUSH = 7,
+    OP_POP = 8
 };
 
 

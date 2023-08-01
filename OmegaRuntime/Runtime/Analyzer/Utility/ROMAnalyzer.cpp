@@ -7,6 +7,8 @@
 #include "../../../Architecture/PrimitiveOperations/MOV.h"
 #include "../../../Architecture/PrimitiveOperations/CMV.h"
 #include "../../../Architecture/PrimitiveOperations/SCL.h"
+#include "../../../Architecture/PrimitiveOperations/PSH.h"
+#include "../../../Architecture/PrimitiveOperations/POP.h"
 
 void ROMAnalyzer::Analyze(Stack * Data, Runtime* CurrentRuntime) {
     ROM* Firmware = static_cast<ROM *>(Data);
@@ -38,6 +40,16 @@ void ROMAnalyzer::Analyze(Stack * Data, Runtime* CurrentRuntime) {
             }
             case Microcode::OP_SCL : {
                 CurrentRuntime->AddOperation(new SCL(Firmware->GetCell(i+1),Firmware->GetCell(i+2),CurrentRuntime));
+                i+=2;
+                break;
+            }
+            case Microcode::OP_PUSH : {
+                CurrentRuntime->AddOperation(new PSH(Firmware->GetCell(i+1),CurrentRuntime));
+                i+=2;
+                break;
+            }
+            case Microcode::OP_POP : {
+                CurrentRuntime->AddOperation(new POP(Firmware->GetCell(i+1),CurrentRuntime));
                 i+=2;
                 break;
             }// Доделать!!! Написать анализатор и после этого уже добавить недостающие коды операций!!!

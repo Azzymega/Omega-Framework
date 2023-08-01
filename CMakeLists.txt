@@ -22,7 +22,7 @@ add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Re
         OmegaRuntime/Architecture/PrimitiveOperations/HLT.h OmegaRuntime/Architecture/PrimitiveOperations/MOV.cpp OmegaRuntime/Architecture/PrimitiveOperations/MOV.h
         OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.cpp OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.h
         OmegaRuntime/Architecture/PrimitiveOperations/ADD.cpp OmegaRuntime/Architecture/PrimitiveOperations/ADD.h
-        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h)
+        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h OmegaRuntime/Architecture/PrimitiveOperations/PSH.cpp OmegaRuntime/Architecture/PrimitiveOperations/PSH.h OmegaRuntime/Architecture/PrimitiveOperations/POP.cpp OmegaRuntime/Architecture/PrimitiveOperations/POP.h)
 add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.cpp
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.h
