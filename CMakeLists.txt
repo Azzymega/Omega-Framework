@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 add_executable(OmegaNaIGEN OmegaNaIGEN/cmplr.cpp OmegaNaIGEN/cmplr.h OmegaLoaderComponent/ldr.h OmegaLoaderComponent/ldr.cpp)
 add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
-add_executable(OmegaJIT OmegaJIT/main.cpp)
+add_executable(OmegaJIT OmegaJIT/main.cpp OmegaRuntime/Architecture/Abstractions/Function.cpp OmegaRuntime/Architecture/Abstractions/Function.h)
 add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
@@ -22,7 +22,7 @@ add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Re
         OmegaRuntime/Architecture/PrimitiveOperations/HLT.h OmegaRuntime/Architecture/PrimitiveOperations/MOV.cpp OmegaRuntime/Architecture/PrimitiveOperations/MOV.h
         OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.cpp OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.h
         OmegaRuntime/Architecture/PrimitiveOperations/ADD.cpp OmegaRuntime/Architecture/PrimitiveOperations/ADD.h
-        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h OmegaRuntime/Architecture/PrimitiveOperations/PSH.cpp OmegaRuntime/Architecture/PrimitiveOperations/PSH.h OmegaRuntime/Architecture/PrimitiveOperations/POP.cpp OmegaRuntime/Architecture/PrimitiveOperations/POP.h)
+        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h OmegaRuntime/Architecture/PrimitiveOperations/PSH.cpp OmegaRuntime/Architecture/PrimitiveOperations/PSH.h OmegaRuntime/Architecture/PrimitiveOperations/POP.cpp OmegaRuntime/Architecture/PrimitiveOperations/POP.h OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.h OmegaRuntime/Runtime/DataTypes/MethodsCode.cpp OmegaRuntime/Runtime/DataTypes/MethodsCode.h)
 add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.cpp
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.h

@@ -7,6 +7,12 @@
 
 typedef char Word;
 
+enum MetadataTypes {
+    MT_START = 55,
+    MT_END = 56,
+    MT_METHOD = 0
+};
+
 enum Microcode {
     OP_HLT = 0,
     OP_MOV = 1,
