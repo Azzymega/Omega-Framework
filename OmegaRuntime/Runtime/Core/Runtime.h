@@ -13,19 +13,21 @@
 #include "../DataTypes/ROM.h"
 #include "../../Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
+#include "../../Architecture/Abstractions/Function.h"
 
 class Runtime {
 private:
     SystemCallManager SCM;
     Registry Roll;
     std::stack<Word> Stack;
+    int FunctionPointer;
     int InstructionPointer;
     std::vector<Archive*> Memory;
-    std::vector<Operation*> Operations;
+    std::vector<Function*> Functions;
 public:
     Runtime();
     Registry* ReturnRegisters();
-    void AddOperation(Operation*);
+    void AddFunction(Function*);
     int GetInstructionPointer() const;
     void SetInstructionPointer(int);
     std::vector<Archive*>* ReturnMemory();

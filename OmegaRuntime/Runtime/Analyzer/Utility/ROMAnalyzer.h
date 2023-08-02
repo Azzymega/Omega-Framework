@@ -10,7 +10,7 @@
 
 class ROMAnalyzer : public StaticAnalyzer {
 public:
-    void Analyze(Stack *, Runtime *) override;
+    void Analyze(Stack *, Runtime* ,Function *);
 };
 
 

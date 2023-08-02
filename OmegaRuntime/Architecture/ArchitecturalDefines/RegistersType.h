@@ -5,12 +5,17 @@
 #ifndef LIBRNT_REGISTERSTYPE_H
 #define LIBRNT_REGISTERSTYPE_H
 
-typedef char Word;
+typedef long long Word;
 
 enum MetadataTypes {
-    MT_START = 55,
-    MT_END = 56,
-    MT_METHOD = 0
+    MT_START = 19550,
+    MT_END = 19551,
+    OBJ_DATA_START = 19552,
+    OBJ_DATA_END = 19553
+};
+
+enum MetadataObjectsType {
+    MT_METHOD = 0,
 };
 
 enum Microcode {

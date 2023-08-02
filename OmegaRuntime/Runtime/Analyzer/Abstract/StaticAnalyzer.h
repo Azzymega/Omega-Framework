@@ -10,7 +10,7 @@
 
 class StaticAnalyzer {
 public:
-    virtual void Analyze(Stack*,Runtime*) = 0;
+
 };
 
 

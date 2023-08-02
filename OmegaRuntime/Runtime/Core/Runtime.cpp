@@ -5,8 +5,11 @@
 #include "Runtime.h"
 
 void Runtime::Execute() {
-    for (InstructionPointer = 0; InstructionPointer < Operations.size(); InstructionPointer++) {
-        Operations[InstructionPointer]->PerformOperation(Operations[InstructionPointer]->ReturnFirstArgument().ReturnData(),Operations[InstructionPointer]->ReturnSecondArgument().ReturnData());
+    for (FunctionPointer = 0; FunctionPointer < Functions.size(); FunctionPointer++) {
+        for (InstructionPointer = 0; InstructionPointer < Functions[FunctionPointer]->ReturnOperationCount() ; ++InstructionPointer) {
+            Functions[FunctionPointer]->ReturnOperation()->PerformOperation(Functions[FunctionPointer]->ReturnOperation()->ReturnFirstArgument().ReturnData(),
+                                                                            Functions[FunctionPointer]->ReturnOperation()->ReturnSecondArgument().ReturnData());
+        }
     }
 }
 
@@ -32,8 +35,8 @@ void Runtime::SetInstructionPointer(int instructionPointer) {
     this->InstructionPointer = instructionPointer;
 }
 
-void Runtime::AddOperation(Operation * Operation) {
-    this->Operations.push_back(Operation);
+void Runtime::AddFunction(Function * Function) {
+    this->Functions.push_back(Function);
 }
 
 SystemCallManager *Runtime::ReturnSystemCallManager() {

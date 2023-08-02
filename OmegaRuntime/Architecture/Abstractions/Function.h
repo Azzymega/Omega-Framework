@@ -9,15 +9,16 @@
 #include <string>
 #include <queue>
 #include "../PrimitiveAbstractions/Operation.h"
+#include "Object.h"
 
-class Function {
+class Function : public Object{
 private:
-    std::string FunctionName;
     std::queue<Operation*> Operations;
 public:
     Function(std::string);
     void AppendOperation(Operation*);
     Operation* ReturnOperation();
+    Word ReturnOperationCount();
 };
 
 

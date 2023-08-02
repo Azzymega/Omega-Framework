@@ -10,8 +10,8 @@ void Function::AppendOperation(Operation* Operation) {
     this->Operations.push(Operation);
 }
 
-Function::Function(std::string FunctionName) {
-    this->FunctionName = std::move(FunctionName);
+Function::Function(std::string unnamed) : Object(unnamed) {
+
 }
 
 Operation *Function::ReturnOperation() {
@@ -19,4 +19,9 @@ Operation *Function::ReturnOperation() {
     this->Operations.pop();
     return Operation;
 }
+
+Word Function::ReturnOperationCount() {
+    return Operations.size();
+}
+
 

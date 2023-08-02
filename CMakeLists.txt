@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 add_executable(OmegaNaIGEN OmegaNaIGEN/cmplr.cpp OmegaNaIGEN/cmplr.h OmegaLoaderComponent/ldr.h OmegaLoaderComponent/ldr.cpp)
 add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
-add_executable(OmegaJIT OmegaJIT/main.cpp OmegaRuntime/Architecture/Abstractions/Function.cpp OmegaRuntime/Architecture/Abstractions/Function.h)
+add_executable(OmegaJIT OmegaJIT/main.cpp OmegaRuntime/Architecture/Abstractions/Function.cpp OmegaRuntime/Architecture/Abstractions/Function.h OmegaRuntime/Architecture/Abstractions/Object.cpp OmegaRuntime/Architecture/Abstractions/Object.h)
 add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
