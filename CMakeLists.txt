@@ -2,11 +2,19 @@ cmake_minimum_required(VERSION 3.25)
 project(LEGACYRuntime)
 set(CMAKE_CXX_FLAGS -static-libgcc)
 set(CMAKE_CXX_FLAGS -static-libstdc++)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
-add_executable(OmegaNaIGEN OmegaNaIGEN/cmplr.cpp OmegaNaIGEN/cmplr.h OmegaLoaderComponent/ldr.h OmegaLoaderComponent/ldr.cpp)
-add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
-add_executable(OmegaJIT OmegaJIT/main.cpp OmegaRuntime/Architecture/Abstractions/Function.cpp OmegaRuntime/Architecture/Abstractions/Function.h OmegaRuntime/Architecture/Abstractions/Object.cpp OmegaRuntime/Architecture/Abstractions/Object.h)
+#add_executable(OmegaNaIGEN OmegaNaIGEN/cmplr.cpp OmegaNaIGEN/cmplr.h OmegaLoaderComponent/ldr.h OmegaLoaderComponent/ldr.cpp)
+#add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
+#add_executable(OmegaJIT OmegaJIT/main.cpp OmegaBCF/Tokens/Abstractions/Token.cpp OmegaBCF/Tokens/Abstractions/Token.h)
+add_library( OmegaBCF SHARED OmegaBCF/Core/Abstractions/Lexer.cpp OmegaBCF/Core/Abstractions/Lexer.h OmegaBCF/MetadataTokens/Abstractions/MetadataToken.cpp
+        OmegaBCF/MetadataTokens/Abstractions/MetadataToken.h OmegaBCF/Architecture/ArchitectureDefines.cpp
+        OmegaBCF/Architecture/ArchitectureDefines.h OmegaBCF/MetadataTokens/Tokens/Type.cpp OmegaBCF/MetadataTokens/Tokens/Type.h
+        OmegaBCF/MetadataTokens/Tokens/Name.cpp OmegaBCF/MetadataTokens/Tokens/Name.h OmegaBCF/Tokens/Tokens/ADD.cpp
+        OmegaBCF/Tokens/Tokens/ADD.h OmegaBCF/Tokens/Tokens/CMV.cpp OmegaBCF/Tokens/Tokens/CMV.h OmegaBCF/Tokens/Tokens/HLT.cpp
+        OmegaBCF/Tokens/Tokens/HLT.h OmegaBCF/Tokens/Tokens/JMP.cpp OmegaBCF/Tokens/Tokens/JMP.h OmegaBCF/Tokens/Tokens/MOV.cpp
+        OmegaBCF/Tokens/Tokens/MOV.h OmegaBCF/Tokens/Tokens/SCL.cpp OmegaBCF/Tokens/Tokens/SCL.h OmegaBCF/Tokens/Abstractions/Token.h
+        OmegaBCF/Tokens/Abstractions/Token.cpp OmegaBCF/Core/ByteCodeMachine.cpp OmegaBCF/Core/ByteCodeMachine.h OmegaBCF/Core/Lexers/InstructionsLexer.cpp OmegaBCF/Core/Lexers/InstructionsLexer.h OmegaBCF/Core/Lexers/MetadataLexer.cpp OmegaBCF/Core/Lexers/MetadataLexer.h)
 add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
@@ -22,8 +30,17 @@ add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Re
         OmegaRuntime/Architecture/PrimitiveOperations/HLT.h OmegaRuntime/Architecture/PrimitiveOperations/MOV.cpp OmegaRuntime/Architecture/PrimitiveOperations/MOV.h
         OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.cpp OmegaRuntime/Architecture/PrimitiveAbstractions/Archive.h
         OmegaRuntime/Architecture/PrimitiveOperations/ADD.cpp OmegaRuntime/Architecture/PrimitiveOperations/ADD.h
-        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h OmegaRuntime/Architecture/PrimitiveOperations/PSH.cpp OmegaRuntime/Architecture/PrimitiveOperations/PSH.h OmegaRuntime/Architecture/PrimitiveOperations/POP.cpp OmegaRuntime/Architecture/PrimitiveOperations/POP.h OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.h OmegaRuntime/Runtime/DataTypes/MethodsCode.cpp OmegaRuntime/Runtime/DataTypes/MethodsCode.h)
-add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
+        OmegaRuntime/Architecture/PrimitiveOperations/JMP.cpp OmegaRuntime/Architecture/PrimitiveOperations/JMP.h
+        OmegaRuntime/Architecture/PrimitiveOperations/CMV.cpp OmegaRuntime/Architecture/PrimitiveOperations/CMV.h
+        OmegaRuntime/Architecture/PrimitiveOperations/SCL.cpp OmegaRuntime/Architecture/PrimitiveOperations/SCL.h
+        OmegaRuntime/Architecture/PrimitiveOperations/PSH.cpp OmegaRuntime/Architecture/PrimitiveOperations/PSH.h
+        OmegaRuntime/Architecture/PrimitiveOperations/POP.cpp OmegaRuntime/Architecture/PrimitiveOperations/POP.h
+        OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/MetadataAnalyzer.h
+        OmegaRuntime/Runtime/DataTypes/MethodsCode.cpp OmegaRuntime/Runtime/DataTypes/MethodsCode.h
+        OmegaRuntime/Architecture/Abstractions/Function.cpp OmegaRuntime/Architecture/Abstractions/Function.h
+        OmegaRuntime/Architecture/Abstractions/Object.cpp OmegaRuntime/Architecture/Abstractions/Object.h)
+add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp
+        OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.cpp
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.h
         OmegaSoftwareALComponent/SystemCalls/PrintSystemCall.cpp OmegaSoftwareALComponent/SystemCalls/PrintSystemCall.h OmegaSoftwareALComponent/SystemCalls/GetSystemCall.cpp
@@ -32,17 +49,17 @@ add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstr
 #add_library( LEGACYRuntime SHARED LEGACYRuntime/cpu.cpp LEGACYRuntime/cpu.h LEGACYRuntime/microcode.cpp LEGACYRuntime/microcode.h OmegaLoaderComponent/ldr.h) Устаревшее
 add_library( OmegaLoaderComponent SHARED OmegaLoaderComponent/ldr.cpp OmegaLoaderComponent/ldr.h)
 add_library( OmegaWriterComponent SHARED OmegaWriterComponent/wrtr.cpp OmegaWriterComponent/wrtr.h)
-add_library( OmegaNaIGENComponent SHARED OmegaNaIGEN/image.cpp OmegaNaIGEN/image.h OmegaNaIGENComponent/token.cpp OmegaNaIGENComponent/token.h OmegaNaIGENComponent/tokenFactory.cpp OmegaNaIGENComponent/tokenFactory.h OmegaNaIGENComponent/mov.cpp OmegaNaIGENComponent/mov.h OmegaNaIGENComponent/cmv.cpp OmegaNaIGENComponent/cmv.h OmegaNaIGENComponent/hlt.cpp OmegaNaIGENComponent/hlt.h OmegaNaIGENComponent/jmp.cpp OmegaNaIGENComponent/jmp.h OmegaNaIGENComponent/add.cpp OmegaNaIGENComponent/add.h OmegaNaIGENComponent/sub.cpp OmegaNaIGENComponent/sub.h OmegaNaIGENComponent/SCL.cpp OmegaNaIGENComponent/SCL.h)
-add_library( OmegaJITComponent SHARED OmegaJITComponent/cmplr.cpp OmegaJITComponent/cmplr.h OmegaJITComponent/image.cpp OmegaJITComponent/image.h OmegaJITComponent/cmplr.h)
-target_link_libraries(OmegaJITComponent PUBLIC OmegaWriterComponent)
-target_link_libraries(OmegaJITComponent PUBLIC OmegaLoaderComponent)
-target_link_libraries(OmegaJITComponent PUBLIC OmegaRuntime)
-target_link_libraries(OmegaJITComponent PUBLIC OmegaNaIGENComponent)
+#add_library( OmegaNaIGENComponent SHARED OmegaNaIGEN/image.cpp OmegaNaIGEN/image.h OmegaNaIGENComponent/token.cpp OmegaNaIGENComponent/token.h OmegaNaIGENComponent/tokenFactory.cpp OmegaNaIGENComponent/tokenFactory.h OmegaNaIGENComponent/mov.cpp OmegaNaIGENComponent/mov.h OmegaNaIGENComponent/cmv.cpp OmegaNaIGENComponent/cmv.h OmegaNaIGENComponent/hlt.cpp OmegaNaIGENComponent/hlt.h OmegaNaIGENComponent/jmp.cpp OmegaNaIGENComponent/jmp.h OmegaNaIGENComponent/add.cpp OmegaNaIGENComponent/add.h OmegaNaIGENComponent/sub.cpp OmegaNaIGENComponent/sub.h OmegaNaIGENComponent/SCL.cpp OmegaNaIGENComponent/SCL.h)
+#add_library( OmegaJITComponent SHARED OmegaJITComponent/cmplr.cpp OmegaJITComponent/cmplr.h OmegaJITComponent/image.cpp OmegaJITComponent/image.h OmegaJITComponent/cmplr.h)
+#target_link_libraries(OmegaJITComponent PUBLIC OmegaWriterComponent)
+#target_link_libraries(OmegaJITComponent PUBLIC OmegaLoaderComponent)
+#target_link_libraries(OmegaJITComponent PUBLIC OmegaRuntime)
+#target_link_libraries(OmegaJITComponent PUBLIC OmegaNaIGENComponent)
 target_link_libraries(OmegaRuntime PUBLIC OmegaSoftwareALComponent)
-target_link_libraries(OmegaNaIGEN PUBLIC OmegaWriterComponent)
-target_link_libraries(OmegaNaIGEN PUBLIC OmegaNaIGENComponent)
-target_link_libraries(OmegaJIT PUBLIC OmegaWriterComponent)
-target_link_libraries(OmegaJIT PUBLIC OmegaNaIGENComponent)
-target_link_libraries(OmegaNaIGEN PUBLIC OmegaRuntime)
-target_link_libraries(OmegaLoader PUBLIC OmegaRuntime)
-target_link_libraries(OmegaJIT PUBLIC OmegaRuntime)
+#target_link_libraries(OmegaNaIGEN PUBLIC OmegaWriterComponent)
+#target_link_libraries(OmegaNaIGEN PUBLIC OmegaNaIGENComponent)
+#target_link_libraries(OmegaJIT PUBLIC OmegaWriterComponent)
+#target_link_libraries(OmegaJIT PUBLIC OmegaNaIGENComponent)
+#target_link_libraries(OmegaNaIGEN PUBLIC OmegaRuntime)
+#target_link_libraries(OmegaLoader PUBLIC OmegaRuntime)
+#target_link_libraries(OmegaJIT PUBLIC OmegaRuntime)
