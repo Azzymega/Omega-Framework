@@ -9,18 +9,20 @@
 #include <fstream>
 #include <vector>
 #include "Lexers/InstructionsLexer.h"
-#include "Lexers/MetadataLexer.h"
+#include "Lexers/MetadatasLexer.h"
 
 class ByteCodeMachine {
 private:
     std::ifstream* ReadStream;
     std::vector<char> Code;
     InstructionsLexer ILexer;
-    class MetadataLexer MTLexer;
+    class MetadatasLexer MTLexer;
+    int Datapointer = 0;
 public:
-    ByteCodeMachine(std::string);
+    ByteCodeMachine(const std::string&);
     void LoadCode();
     void StartMetadataLexing();
+    void StartInstructionLexing();
 };
 
 

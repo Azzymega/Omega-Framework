@@ -14,7 +14,9 @@ add_library( OmegaBCF SHARED OmegaBCF/Core/Abstractions/Lexer.cpp OmegaBCF/Core/
         OmegaBCF/Tokens/Tokens/ADD.h OmegaBCF/Tokens/Tokens/CMV.cpp OmegaBCF/Tokens/Tokens/CMV.h OmegaBCF/Tokens/Tokens/HLT.cpp
         OmegaBCF/Tokens/Tokens/HLT.h OmegaBCF/Tokens/Tokens/JMP.cpp OmegaBCF/Tokens/Tokens/JMP.h OmegaBCF/Tokens/Tokens/MOV.cpp
         OmegaBCF/Tokens/Tokens/MOV.h OmegaBCF/Tokens/Tokens/SCL.cpp OmegaBCF/Tokens/Tokens/SCL.h OmegaBCF/Tokens/Abstractions/Token.h
-        OmegaBCF/Tokens/Abstractions/Token.cpp OmegaBCF/Core/ByteCodeMachine.cpp OmegaBCF/Core/ByteCodeMachine.h OmegaBCF/Core/Lexers/InstructionsLexer.cpp OmegaBCF/Core/Lexers/InstructionsLexer.h OmegaBCF/Core/Lexers/MetadataLexer.cpp OmegaBCF/Core/Lexers/MetadataLexer.h)
+        OmegaBCF/Tokens/Abstractions/Token.cpp OmegaBCF/Core/ByteCodeMachine.cpp OmegaBCF/Core/ByteCodeMachine.h
+        OmegaBCF/Core/Lexers/InstructionsLexer.cpp OmegaBCF/Core/Lexers/InstructionsLexer.h
+        OmegaBCF/Core/Lexers/MetadataLexer.cpp OmegaBCF/Core/Lexers/MetadatasLexer.h)
 add_library( OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
@@ -63,3 +65,6 @@ target_link_libraries(OmegaRuntime PUBLIC OmegaSoftwareALComponent)
 #target_link_libraries(OmegaNaIGEN PUBLIC OmegaRuntime)
 #target_link_libraries(OmegaLoader PUBLIC OmegaRuntime)
 #target_link_libraries(OmegaJIT PUBLIC OmegaRuntime)
+add_executable(Test Test/main.cpp Test/main.h)
+target_link_libraries(OmegaRuntime PUBLIC OmegaBCF)
+target_link_libraries(Test PUBLIC OmegaRuntime)

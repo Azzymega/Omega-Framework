@@ -6,7 +6,9 @@
 #define LEGACYRUNTIME_INSTRUCTIONSLEXER_H
 
 
-class InstructionsLexer {
+#include "../Abstractions/Lexer.h"
+
+class InstructionsLexer : public Lexer{
 
 };
 
