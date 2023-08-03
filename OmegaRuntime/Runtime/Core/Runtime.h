@@ -13,9 +13,11 @@
 #include "../DataTypes/ROM.h"
 #include "../../Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
+#include "../../Architecture/OperableTypes/Assembly.h"
 
 class Runtime {
 private:
+    std::vector<Assembly> LoadedAssemblies;
     SystemCallManager SCM;
     Registry Roll;
     std::stack<Word> Stack;
@@ -24,6 +26,7 @@ private:
     std::vector<Operation*> Operations;
 public:
     Runtime();
+    void LoadAssembly(Assembly);
     Registry* ReturnRegisters();
     void AddOperation(Operation*);
     int GetInstructionPointer() const;

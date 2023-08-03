@@ -6,8 +6,15 @@
 #define LEGACYRUNTIME_METHOD_H
 
 
-class Method {
+#include <vector>
+#include "Field.h"
+#include "../../PrimitiveAbstractions/Operation.h"
 
+class Method {
+private:
+    std::string Name;
+    std::vector<class Field> Parameters;
+    std::vector<Operation*> Operations;
 };
 
 

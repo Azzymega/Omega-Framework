@@ -6,11 +6,13 @@
 #define LEGACYRUNTIME_FIELD_H
 
 
+#include <string>
 #include "../../CTS/Type.h"
 
 class Field {
 protected:
     Type Type;
+    std::string Name;
 };
 
 

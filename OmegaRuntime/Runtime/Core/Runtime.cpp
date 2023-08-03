@@ -52,3 +52,7 @@ void Runtime::PushToStack(Word Data) {
     Stack.push(Data);
 }
 
+void Runtime::LoadAssembly(Assembly Assembly) {
+    this->LoadedAssemblies.push_back(Assembly);
+}
+
