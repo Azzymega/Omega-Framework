@@ -7,6 +7,11 @@
 
 typedef char Word;
 
+enum ModulesType {
+    RLL = 0,
+    OEX = 1
+};
+
 enum Microcode {
     OP_HLT = 0,
     OP_MOV = 1,
