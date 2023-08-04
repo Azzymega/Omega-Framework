@@ -3,12 +3,12 @@
 //
 
 #include "ROMAnalyzer.h"
-#include "../../../Architecture/PrimitiveOperations/ADD.h"
-#include "../../../Architecture/PrimitiveOperations/MOV.h"
-#include "../../../Architecture/PrimitiveOperations/CMV.h"
-#include "../../../Architecture/PrimitiveOperations/SCL.h"
-#include "../../../Architecture/PrimitiveOperations/PSH.h"
-#include "../../../Architecture/PrimitiveOperations/POP.h"
+#include "../../../Architecture/Legacy/ADD.h"
+#include "../../../Architecture/Legacy/MOV.h"
+#include "../../../Architecture/Legacy/CMV.h"
+#include "../../../Architecture/Legacy/SCL.h"
+#include "../../../Architecture/Legacy/PSH.h"
+#include "../../../Architecture/Legacy/POP.h"
 
 void ROMAnalyzer::Analyze(Stack * Data, Runtime* CurrentRuntime) {
     ROM* Firmware = static_cast<ROM *>(Data);
