@@ -9,11 +9,11 @@
 #include <stack>
 #include "../../Architecture/PrimitiveAbstractions/Depository.h"
 #include "../../Architecture/PrimitiveDataTypes//Stack.h"
-#include "../../Architecture/PrimitiveAbstractions/Operation.h"
 #include "../DataTypes/ROM.h"
 #include "../../Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
 #include "../../Architecture/OperableTypes/Assembly.h"
+#include "../../Architecture/PrimitiveAbstractions/Command.h"
 
 class Runtime {
 private:
@@ -23,17 +23,18 @@ private:
     std::stack<Word> Stack;
     int InstructionPointer;
     std::vector<Archive*> Memory;
-    std::vector<Operation*> Operations;
+    std::vector<Command*> Operations;
 public:
     Runtime();
     void LoadAssembly(Assembly);
     Registry* ReturnRegisters();
-    void AddOperation(Operation*);
+    void AddOperation(Command*);
     int GetInstructionPointer() const;
     void SetInstructionPointer(int);
     std::vector<Archive*>* ReturnMemory();
     SystemCallManager* ReturnSystemCallManager();
     Word GetStackTop();
+    Word GetTopAndPop();
     void PopStack();
     void PushToStack(Word);
     void Execute();

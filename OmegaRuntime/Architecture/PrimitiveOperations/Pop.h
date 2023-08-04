@@ -2,16 +2,16 @@
 // Created by Danil on 04.08.2023.
 //
 
-#ifndef LEGACYRUNTIME_ADD_H
-#define LEGACYRUNTIME_ADD_H
+#ifndef LEGACYRUNTIME_POP_H
+#define LEGACYRUNTIME_POP_H
 
 #include "../../Runtime/Core/Runtime.h"
 #include "../PrimitiveAbstractions/Command.h"
 
-class Add : public Command{
+class Pop : public Command {
 public:
     Word PerformOperation() override;
 };
 
 
-#endif //LEGACYRUNTIME_ADD_H
+#endif //LEGACYRUNTIME_POP_H

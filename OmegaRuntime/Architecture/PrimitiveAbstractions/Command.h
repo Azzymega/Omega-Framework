@@ -5,7 +5,6 @@
 #ifndef LEGACYRUNTIME_COMMAND_H
 #define LEGACYRUNTIME_COMMAND_H
 
-
 #include <vector>
 #include "../PrimitiveDataTypes/Cell.h"
 

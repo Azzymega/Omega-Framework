@@ -5,9 +5,7 @@
 #include "Runtime.h"
 
 void Runtime::Execute() {
-    for (InstructionPointer = 0; InstructionPointer < Operations.size(); InstructionPointer++) {
-        Operations[InstructionPointer]->PerformOperation(Operations[InstructionPointer]->ReturnFirstArgument().ReturnData(),Operations[InstructionPointer]->ReturnSecondArgument().ReturnData());
-    }
+    LoadedAssemblies[0].ExecuteMain();
 }
 
 std::vector<Archive *> *Runtime::ReturnMemory() {
@@ -32,7 +30,7 @@ void Runtime::SetInstructionPointer(int instructionPointer) {
     this->InstructionPointer = instructionPointer;
 }
 
-void Runtime::AddOperation(Operation * Operation) {
+void Runtime::AddOperation(Command * Operation) {
     this->Operations.push_back(Operation);
 }
 
@@ -54,5 +52,11 @@ void Runtime::PushToStack(Word Data) {
 
 void Runtime::LoadAssembly(Assembly Assembly) {
     this->LoadedAssemblies.push_back(Assembly);
+}
+
+Word Runtime::GetTopAndPop() {
+    int x = Stack.top();
+    Stack.pop();
+    return x;
 }
 

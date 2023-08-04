@@ -12,9 +12,12 @@
 
 class Registry : public Archive{
 private:
+    int Counter;
     std::map<Word,Word> Data;
 public:
     Registry();
+    void AppendCounter();
+    int ReturnCounter();
     void AddNote(Word,Word);
     void SetNote(Word,Word);
     Word GetNote(Word);

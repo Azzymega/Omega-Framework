@@ -8,7 +8,7 @@
 
 #include <vector>
 #include "Field.h"
-#include "../../PrimitiveAbstractions/Operation.h"
+#include "../../PrimitiveAbstractions/Command.h"
 
 class Method {
 private:
@@ -16,11 +16,13 @@ private:
     MethodParametersType ReturnType;
     std::vector<Field> Parameters;
     std::vector<MethodParametersType> ParametersTypes;
-    std::vector<Operation*> Operations;
+    std::vector<Command*> Operations;
 public:
     Method(std::string,MethodParametersType);
+    void Execute();
+    std::string ReturnName();
     void AppendParameter(Field);
-    void AppendOperation(Operation*);
+    void AppendOperation(Command*);
     void AppendParameterType(MethodParametersType);
 };
 

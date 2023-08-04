@@ -3,3 +3,11 @@
 //
 
 #include "Add.h"
+
+
+Word Add::PerformOperation() {
+    int x = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
+    int y = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
+    static_cast<class Runtime*>(Runtime)->PushToStack(x+y);
+    return 0;
+}
