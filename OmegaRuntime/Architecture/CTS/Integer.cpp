@@ -3,3 +3,7 @@
 //
 
 #include "Integer.h"
+
+Integer::Integer(Word Data) {
+    this->Data = Data;
+}

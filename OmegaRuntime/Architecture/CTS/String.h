@@ -11,6 +11,8 @@
 class String : public Type {
 private:
     std::vector<char> Characters;
+public:
+    String(std::vector<char>);
 };
 
 

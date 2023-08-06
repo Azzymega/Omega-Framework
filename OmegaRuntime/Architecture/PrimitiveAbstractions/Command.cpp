@@ -4,11 +4,11 @@
 
 #include "Command.h"
 
-Command::Command(std::vector<Cell> Operands, void * Runtime) {
+Command::Command(std::vector<Parameter*> Operands, void * Runtime) {
     this->Runtime = Runtime;
     this->Operands = Operands;
 }
 
-Cell Command::ReturnArguments(Word Index) {
-    return Operands[Index];
+Parameter Command::ReturnArguments(Word Index) {
+    return *Operands[Index];
 }

@@ -11,6 +11,7 @@
 class ISLoad : public Command {
 public:
     Word PerformOperation() override;
+    ISLoad(std::vector<Parameter *> unnamed, void *unnamed1);
 };
 
 

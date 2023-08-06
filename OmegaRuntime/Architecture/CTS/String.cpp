@@ -3,3 +3,7 @@
 //
 
 #include "String.h"
+
+String::String(std::vector<char> Characters) {
+    this->Characters = Characters;
+}

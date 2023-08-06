@@ -11,6 +11,7 @@
 class Pop : public Command {
 public:
     Word PerformOperation() override;
+    Pop(std::vector<Parameter *> unnamed, void *unnamed1);
 };
 
 

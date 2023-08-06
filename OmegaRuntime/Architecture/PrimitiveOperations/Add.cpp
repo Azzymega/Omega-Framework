@@ -11,3 +11,7 @@ Word Add::PerformOperation() {
     static_cast<class Runtime*>(Runtime)->PushToStack(x+y);
     return 0;
 }
+
+Add::Add(std::vector<Parameter *> unnamed, void *unnamed1) : Command(unnamed, unnamed1) {
+
+}

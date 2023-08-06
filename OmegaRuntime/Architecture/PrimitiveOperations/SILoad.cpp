@@ -10,3 +10,7 @@ Word SILoad::PerformOperation() {
                     ReturnRegisters()->GetNote(this->Operands[0].ReturnData()));
     return 0;
 }
+
+SILoad::SILoad(std::vector<Parameter *> unnamed, void *unnamed1) : Command(unnamed, unnamed1) {
+
+}

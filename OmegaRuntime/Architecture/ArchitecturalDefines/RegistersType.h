@@ -13,8 +13,8 @@ enum ModulesType {
 };
 
 enum MethodParametersType {
-    String = 0,
-    Integer = 1
+    TString = 0,
+    TInteger = 1
 };
 
 enum TokenTypes {
@@ -42,26 +42,25 @@ enum TokenTypes {
     FieldEnds = 31,
     MethodToken = 18,
     MethodStarts = 28,
-    MethodReturnType = 19,
     MethodNameStarts = 20,
     MethodNameEnds = 21,
     MethodParametersStart = 22,
     MethodParametersEnd = 23,
     MethodEnds = 29,
     NamespaceInternalEnds = 25,
-    AssemblyEnds = 27
+    AssemblyEnds = 27,
+    InstructionStarts = 99,
+    InstructionEnds = 102,
+    InstructionParameterTypeStart = 115,
+    InstructionParameterTypeEnds = 114
 };
 
 enum Microcode {
-    OP_HLT = 0,
-    OP_MOV = 1,
-    OP_JMP = 2,
-    OP_ADD = 3,
-    OP_SUB = 4,
-    OP_CMV = 5,
-    OP_SCL = 6,
-    OP_PUSH = 7,
-    OP_POP = 8
+    OP_ADD = 0,
+    OP_ISLOAD = 1,
+    OP_POP = 2,
+    OP_SILOAD = 3,
+    OP_SLOAD = 4,
 };
 
 

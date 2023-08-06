@@ -3,24 +3,14 @@
 //
 
 #include "MethodAnalyzer.h"
-/*
-class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap) {
-    int MethodPointer = 0;
+
+class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) {
+    int Pointer = 0;
+    MethodParametersType ReturnType =
+            static_cast<MethodParametersType>(MethodMemoryMap.GetCell(Pointer).ReturnData());
     std::string MethodName;
-    MethodParametersType Type = static_cast<MethodParametersType>(MethodMemoryMap.GetCell(
-            MethodPointer++).ReturnData());
-    for (int i = MethodPointer; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
-        if (MethodMemoryMap.GetCell(i).ReturnData() ==
-        TokenTypes::MethodNameEnds) {
-            MethodPointer = i;
-            break;
-        }
-        else{
-            MethodName+=MethodMemoryMap.GetCell(i).ReturnData();
-            // Дописать тут ссылку на анализатор инструкций с добавлением их в метод
-        }
-    }
-    Method NewMethod = Method();
-    return 0;
+    Pointer++;
+    for (; MethodMemoryMap.GetCell(Pointer).ReturnData() != MethodNameEnds; ++Pointer) {
+        MethodName+=MethodMemoryMap.GetCell(Pointer).ReturnData();
+    } // Переписать метод.
 }
-*/

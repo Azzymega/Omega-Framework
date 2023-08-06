@@ -7,15 +7,16 @@
 
 #include <vector>
 #include "../PrimitiveDataTypes/Cell.h"
+#include "../OperableTypes/ObjectsPrimitives/Parameter.h"
 
 class Command {
 protected:
     void* Runtime;
-    std::vector<Cell> Operands;
+    std::vector<Parameter*> Operands;
 public:
     virtual Word PerformOperation() = 0;
-    Command(std::vector<Cell>,void*);
-    Cell ReturnArguments(Word);
+    Command(std::vector<Parameter*>,void*);
+    Parameter ReturnArguments(Word);
 };
 
 

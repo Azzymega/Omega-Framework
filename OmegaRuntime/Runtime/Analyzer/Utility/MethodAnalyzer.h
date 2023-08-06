@@ -10,7 +10,7 @@
 #include "../../../Architecture/OperableTypes/ObjectsPrimitives/Method.h"
 
 class MethodAnalyzer {
-    Method AnalyzeMethod(Stack);
+    Method AnalyzeMethod(Stack,void*);
 };
 
 

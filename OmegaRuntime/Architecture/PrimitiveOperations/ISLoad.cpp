@@ -10,3 +10,7 @@ Word ISLoad::PerformOperation() {
                     static_cast<class Runtime*>(Runtime)->GetTopAndPop());
     return 0;
 }
+
+ISLoad::ISLoad(std::vector<Parameter *> unnamed, void *unnamed1) : Command(unnamed, unnamed1) {
+
+}

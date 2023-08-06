@@ -11,6 +11,7 @@
 class SILoad : public Command {
 public:
     Word PerformOperation() override;
+    SILoad(std::vector<Parameter *> unnamed, void *unnamed1);
 };
 
 

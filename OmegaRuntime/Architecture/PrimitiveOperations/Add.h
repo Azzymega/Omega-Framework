@@ -11,6 +11,7 @@
 class Add : public Command{
 public:
     Word PerformOperation() override;
+    Add(std::vector<Parameter *> unnamed, void *unnamed1);
 };
 
 

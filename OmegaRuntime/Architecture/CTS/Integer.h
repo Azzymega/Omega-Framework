@@ -12,6 +12,8 @@
 class Integer : public Type{
 private:
     Word Data;
+public:
+    Integer(Word);
 };
 
 

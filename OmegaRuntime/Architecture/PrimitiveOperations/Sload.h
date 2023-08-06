@@ -11,6 +11,7 @@
 class Sload  : public Command {
 public:
     Word PerformOperation() override;
+    Sload(std::vector<Parameter *> unnamed, void *unnamed1);
 };
 
 
