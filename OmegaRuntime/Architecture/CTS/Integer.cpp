@@ -7,3 +7,7 @@
 Integer::Integer(Word Data) {
     this->Data = Data;
 }
+
+Word Integer::ReturnData() {
+    return Data;
+}

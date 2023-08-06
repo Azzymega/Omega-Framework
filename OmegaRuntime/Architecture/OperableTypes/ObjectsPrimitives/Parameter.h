@@ -9,6 +9,8 @@
 #include "../../CTS/Type.h"
 
 class Parameter {
+public:
+    virtual Type* ReturnParameter() = 0;
 };
 
 

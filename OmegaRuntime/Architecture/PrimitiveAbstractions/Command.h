@@ -16,7 +16,7 @@ protected:
 public:
     virtual Word PerformOperation() = 0;
     Command(std::vector<Parameter*>,void*);
-    Parameter ReturnArguments(Word);
+    Parameter * ReturnArguments(Word);
 };
 
 

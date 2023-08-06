@@ -3,9 +3,10 @@
 //
 
 #include "Sload.h"
+#include "../CTS/Integer.h"
 
 Word Sload::PerformOperation() {
-    static_cast<class Runtime*>(Runtime)->PushToStack(Operands[0].ReturnData());
+    static_cast<class Runtime*>(Runtime)->PushToStack(reinterpret_cast<Integer*>(Operands[0]->ReturnParameter())->ReturnData());
     return 0;
 }
 

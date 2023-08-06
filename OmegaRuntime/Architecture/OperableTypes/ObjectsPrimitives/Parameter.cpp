@@ -4,6 +4,3 @@
 
 #include "Parameter.h"
 
-Parameter::Parameter(Type Data) {
-    this->Data = Data;
-}

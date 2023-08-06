@@ -6,7 +6,7 @@
 
 Word ISLoad::PerformOperation() {
     static_cast<class Runtime*>(Runtime)->ReturnRegisters()->
-            SetNote(this->Operands[0].ReturnData(),
+            SetNote(static_cast<class Runtime*>(Runtime)->ReturnRegisters()->ReturnCounter(),
                     static_cast<class Runtime*>(Runtime)->GetTopAndPop());
     return 0;
 }

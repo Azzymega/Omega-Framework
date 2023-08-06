@@ -11,9 +11,10 @@
 
 class StringParameters : public Parameter {
 private:
-    String Data;
+    class String Data;
 public:
-    StringParameters(String);
+    StringParameters(class String);
+    Type * ReturnParameter() override;
 };
 
 

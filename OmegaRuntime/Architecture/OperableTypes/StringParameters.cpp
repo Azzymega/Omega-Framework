@@ -4,6 +4,9 @@
 
 #include "StringParameters.h"
 
-StringParameters::StringParameters(String Data) {
-    this->Data = Data;
+StringParameters::StringParameters(class String Data) : Data(Data){
+}
+
+Type *StringParameters::ReturnParameter() {
+    return nullptr;
 }

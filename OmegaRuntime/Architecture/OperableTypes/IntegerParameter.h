@@ -11,9 +11,10 @@
 
 class IntegerParameter : public Parameter{
 private:
-    class Integer Data;
+    Integer Data;
 public:
-    IntegerParameter(class Integer);
+    IntegerParameter(Integer);
+    Type * ReturnParameter() override;
 };
 
 

@@ -14,6 +14,7 @@ private:
     Word Data;
 public:
     Integer(Word);
+    Word ReturnData();
 };
 
 

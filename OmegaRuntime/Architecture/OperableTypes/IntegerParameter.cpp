@@ -4,6 +4,10 @@
 
 #include "IntegerParameter.h"
 
-IntegerParameter::IntegerParameter(struct Integer Data) {
-    this->Data = Data;
+IntegerParameter::IntegerParameter(Integer Data) : Data(Data){
+
+}
+
+Type *IntegerParameter::ReturnParameter() {
+    return nullptr;
 }

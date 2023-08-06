@@ -19,5 +19,8 @@ Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
         case TInteger:{
             return new IntegerParameter(Integer(Data.GetCell(1).ReturnData()));
         }
+        default:{
+            return nullptr;
+        }
     }
 }

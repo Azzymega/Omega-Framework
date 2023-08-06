@@ -9,6 +9,6 @@ Command::Command(std::vector<Parameter*> Operands, void * Runtime) {
     this->Operands = Operands;
 }
 
-Parameter Command::ReturnArguments(Word Index) {
-    return *Operands[Index];
+Parameter * Command::ReturnArguments(Word Index) {
+    return Operands[Index];
 }
