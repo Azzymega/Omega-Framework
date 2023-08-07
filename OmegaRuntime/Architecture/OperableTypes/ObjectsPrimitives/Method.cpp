@@ -4,7 +4,7 @@
 
 #include "Method.h"
 
-void Method::AppendParameter(Field Field) {
+void Method::AppendParameter(Parameter* Field) {
     this->Parameters.push_back(Field);
 }
 

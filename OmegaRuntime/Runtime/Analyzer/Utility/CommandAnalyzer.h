@@ -11,7 +11,7 @@
 
 class CommandAnalyzer {
 public:
-    Command* AnalyzeCommand(Stack, void*);
+    static Command* AnalyzeCommand(Stack, void*);
 };
 
 

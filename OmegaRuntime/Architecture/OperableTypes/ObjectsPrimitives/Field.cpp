@@ -3,3 +3,8 @@
 //
 
 #include "Field.h"
+
+Field::Field(struct Type * Data, std::string Name) {
+    this->Type = Data;
+    this->Name = Name;
+}

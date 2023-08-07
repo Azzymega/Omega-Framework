@@ -14,14 +14,14 @@ class Method {
 private:
     std::string Name;
     MethodParametersType ReturnType;
-    std::vector<Field> Parameters;
+    std::vector<Parameter*> Parameters;
     std::vector<MethodParametersType> ParametersTypes;
     std::vector<Command*> Operations;
 public:
     Method(std::string,MethodParametersType);
     void Execute();
     std::string ReturnName();
-    void AppendParameter(Field);
+    void AppendParameter(Parameter*);
     void AppendOperation(Command*);
     void AppendParameterType(MethodParametersType);
 };

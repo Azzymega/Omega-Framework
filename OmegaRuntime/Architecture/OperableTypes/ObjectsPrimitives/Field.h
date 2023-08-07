@@ -11,8 +11,10 @@
 
 class Field {
 protected:
-    Type Type;
+    Type* Type;
     std::string Name;
+public:
+    Field(class Type*,std::string);
 };
 
 
