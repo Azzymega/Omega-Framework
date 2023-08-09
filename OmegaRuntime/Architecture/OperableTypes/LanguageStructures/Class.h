@@ -10,7 +10,7 @@
 
 class Class : public Object {
 public:
-    Class(std::string unnamed, void *unnamed1);
+    Class(const std::string&, void*,std::vector<Field>,std::vector<Method>);
 };
 
 

@@ -12,6 +12,11 @@ enum ModulesType {
     OEX = 1
 };
 
+enum ObjectTypes {
+    STRUCT = -44,
+    CLASS = -55,
+};
+
 enum MethodParametersType {
     TString = 0,
     TInteger = 1
@@ -29,23 +34,22 @@ enum TokenTypes {
     NamespaceNameStarts = 7,
     NamespaceNameEnd = 8,
     NamespaceInternalStarts = 24,
-    ObjectType = 9,
+    ObjectStarts = 9,
+    ObjectType = -4,
     ObjectNameStarts = 10,
     ObjectNameEnds = 11,
-    ObjectInternalStarts = 12,
-    ObjectInternalEnds = 13,
     FieldStarts = 30,
     FieldType = 15,
     FieldNameStart = -34,
     FieldNameEnds = -20,
     FieldEnds = 31,
-    MethodToken = 18,
     MethodStarts = 28,
     MethodNameStarts = 20,
     MethodNameEnds = 21,
     MethodParameterStart = 99,
     MethodParameterEnd = 100,
     MethodEnds = 29,
+    ObjectEnds = -32,
     NamespaceInternalEnds = 25,
     AssemblyEnds = 27,
     InstructionStarts = 99,

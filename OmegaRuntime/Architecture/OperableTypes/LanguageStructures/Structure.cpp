@@ -4,6 +4,8 @@
 
 #include "Structure.h"
 
-Structure::Structure(std::string unnamed, void *unnamed1) : Object(unnamed, unnamed1) {
+#include <utility>
+
+Structure::Structure(const std::string& unnamed, void *unnamed1,std::vector<Field> F,std::vector<Method> M) : Object(unnamed, unnamed1,std::move(F),std::move(M)) {
 
 }

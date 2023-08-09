@@ -6,7 +6,7 @@
 #include "../../../Architecture/CTS/String.h"
 #include "../../../Architecture/CTS/Integer.h"
 
-Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void *) {
+Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void * Runtime) {
     MethodParametersType Type;
     std::string FieldName;
     Type = static_cast<MethodParametersType>(FieldMemory.GetCell(1).ReturnData());

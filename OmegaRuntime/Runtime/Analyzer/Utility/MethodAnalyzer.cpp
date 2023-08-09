@@ -76,7 +76,7 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
         }
         InstructionsStack.push_back(Data);
     }
-    for ( Stack Data : InstructionsStack) {
+    for ( const Stack& Data : InstructionsStack) {
         Operations.push_back(CommandAnalyzer::AnalyzeCommand(Data,Runtime));
     }
     for ( Parameter* Param : Params) {

@@ -10,7 +10,8 @@
 #include "../../../Architecture/OperableTypes/ObjectsPrimitives/Method.h"
 
 class MethodAnalyzer {
-    Method AnalyzeMethod(Stack,void*);
+public:
+    static Method AnalyzeMethod(Stack,void*);
 };
 
 

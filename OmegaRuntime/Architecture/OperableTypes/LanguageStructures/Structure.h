@@ -10,7 +10,9 @@
 
 class Structure : public Object {
 public:
-    Structure(std::string unnamed, void *unnamed1);
+    Structure(const std::string&, void *unnamed1);
+
+    Structure(const std::string &unnamed, void *unnamed1, std::vector<Field> F, std::vector<Method> M);
 };
 
 

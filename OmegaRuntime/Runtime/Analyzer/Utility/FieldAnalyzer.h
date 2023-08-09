@@ -10,6 +10,7 @@
 #include "../../../Architecture/OperableTypes/ObjectsPrimitives/Field.h"
 
 class FieldAnalyzer {
+public:
     static Field* AnalyzeField(Stack, void*);
 };
 
