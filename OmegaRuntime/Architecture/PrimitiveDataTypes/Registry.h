@@ -9,18 +9,19 @@
 #include <map>
 #include "../PrimitiveAbstractions/Archive.h"
 #include "../ArchitecturalDefines/RegistersType.h"
+#include "../../Architecture/CTS/Type.h"
 
 class Registry : public Archive{
 private:
     int Counter;
-    std::map<Word,Word> Data;
+    std::map<int,Type*> Data;
 public:
     Registry();
     void AppendCounter();
     int ReturnCounter();
-    void AddNote(Word,Word);
-    void SetNote(Word,Word);
-    Word GetNote(Word);
+    void AddNote(int,Type*);
+    void SetNote(int,Type*);
+    Type* GetNote(int);
 };
 
 
