@@ -22,6 +22,7 @@ public:
     void AddNote(int,Type*);
     void SetNote(int,Type*);
     Type* GetNote(int);
+    void Clear();
 };
 
 

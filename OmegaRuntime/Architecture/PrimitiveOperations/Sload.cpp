@@ -3,13 +3,14 @@
 //
 
 #include "Sload.h"
-#include "../CTS/Integer.h"
+
+#include <utility>
 
 Word Sload::PerformOperation() {
-    static_cast<class Runtime*>(Runtime)->PushToStack(reinterpret_cast<Integer*>(Operands[0]->ReturnParameter())->ReturnData());
+    static_cast<class Runtime*>(Runtime)->PushToStack(Operands[0]->ReturnParameter());
     return 0;
 }
 
-Sload::Sload(std::vector<Parameter *> unnamed, void *unnamed1) : Command(unnamed, unnamed1) {
+Sload::Sload(std::vector<Parameter *> unnamed, void *unnamed1) : Command(std::move(unnamed), unnamed1) {
 
 }

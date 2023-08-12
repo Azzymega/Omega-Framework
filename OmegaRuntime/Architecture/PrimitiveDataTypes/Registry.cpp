@@ -29,3 +29,7 @@ void Registry::AppendCounter() {
 int Registry::ReturnCounter() {
     return this->Counter;
 }
+
+void Registry::Clear() {
+    this->Data.clear();
+}

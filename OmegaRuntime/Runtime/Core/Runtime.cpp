@@ -38,7 +38,7 @@ SystemCallManager *Runtime::ReturnSystemCallManager() {
     return &SCM;
 }
 
-Word Runtime::GetStackTop() {
+Type* Runtime::GetStackTop() {
     return Stack.top();
 }
 
@@ -46,7 +46,7 @@ void Runtime::PopStack() {
     Stack.pop();
 }
 
-void Runtime::PushToStack(Word Data) {
+void Runtime::PushToStack(Type* Data) {
     Stack.push(Data);
 }
 
@@ -54,8 +54,8 @@ void Runtime::LoadAssembly(Assembly Assembly) {
     this->LoadedAssemblies.push_back(Assembly);
 }
 
-Word Runtime::GetTopAndPop() {
-    int x = Stack.top();
+Type* Runtime::GetTopAndPop() {
+    Type* x = Stack.top();
     Stack.pop();
     return x;
 }

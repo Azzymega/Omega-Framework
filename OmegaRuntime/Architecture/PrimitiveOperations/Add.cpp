@@ -3,12 +3,15 @@
 //
 
 #include "Add.h"
+#include "../CTS/Integer.h"
 
 
 Word Add::PerformOperation() {
-    int x = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
-    int y = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
-    static_cast<class Runtime*>(Runtime)->PushToStack(x+y);
+    Type* x = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
+    Type* y = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
+    static_cast<class Runtime*>(Runtime)->PushToStack
+            (new Integer(static_cast<class Integer*>(x)->ReturnData()
+                    +static_cast<class Integer*>(y)->ReturnData()));
     return 0;
 }
 

@@ -5,7 +5,7 @@
 #ifndef LIBRNT_REGISTERSTYPE_H
 #define LIBRNT_REGISTERSTYPE_H
 
-typedef char Word;
+typedef int Word;
 
 enum ModulesType {
     RLL = 0,

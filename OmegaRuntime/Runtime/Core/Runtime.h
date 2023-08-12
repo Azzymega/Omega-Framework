@@ -20,7 +20,7 @@ private:
     std::vector<Assembly> LoadedAssemblies;
     SystemCallManager SCM;
     Registry Roll;
-    std::stack<Word> Stack;
+    std::stack<Type*> Stack;
     int InstructionPointer;
     std::vector<Archive*> Memory;
     std::vector<Command*> Operations;
@@ -33,10 +33,10 @@ public:
     void SetInstructionPointer(int);
     std::vector<Archive*>* ReturnMemory();
     SystemCallManager* ReturnSystemCallManager();
-    Word GetStackTop();
-    Word GetTopAndPop();
+    Type* GetStackTop();
+    Type* GetTopAndPop();
     void PopStack();
-    void PushToStack(Word);
+    void PushToStack(Type*);
     void Execute();
 };
 
