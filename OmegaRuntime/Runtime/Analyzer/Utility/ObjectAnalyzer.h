@@ -8,8 +8,10 @@
 
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
 #include "../../../Architecture/OperableTypes/ObjectIdentifier.h"
+#include "../../../Architecture/OperableTypes/Namespace.h"
 
 class ObjectAnalyzer {
+public:
     static Object* AnalyzeObject(Stack, void*,void*);
 };
 

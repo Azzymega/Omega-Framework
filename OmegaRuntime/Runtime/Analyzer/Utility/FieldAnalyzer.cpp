@@ -11,14 +11,15 @@ Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void * Runtime) {
     std::string FieldName;
     Type = static_cast<MethodParametersType>(FieldMemory.GetCell(1).ReturnData());
     for (int i = 0; i < FieldMemory.ReturnCellsSize(); ++i) {
-        if (i == TokenTypes::FieldNameStart){}
-        for (int j = i; j < FieldMemory.ReturnCellsSize(); ++j) {
-            if (j == TokenTypes::FieldNameEnds){
-                break;
+        if (FieldMemory.GetCell(i).ReturnData() == TokenTypes::FieldNameStart){
+            for (int j = i; j < FieldMemory.ReturnCellsSize(); ++j) {
+                if (FieldMemory.GetCell(j).ReturnData() == TokenTypes::FieldNameEnds){
+                    break;
+                }
+                FieldName+=FieldMemory.GetCell(j).ReturnData();
             }
-            FieldName+=FieldMemory.GetCell(j).ReturnData();
+            break;
         }
-        break;
     }
     switch (Type) {
         case MethodParametersType::TString : {

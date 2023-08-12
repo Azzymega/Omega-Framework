@@ -7,7 +7,6 @@
 #include "Range.h"
 #include "MethodAnalyzer.h"
 #include "../../../Architecture/OperableTypes/LanguageStructures/Structure.h"
-#include "../../../Architecture/OperableTypes/LanguageStructures/Class.h"
 
 Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespace, void* Runtime) {
     std::vector<Field> Fields;
@@ -18,14 +17,15 @@ Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespac
     std::vector<Stack> MethodsStacks;
     std::string Name;
     for (int i = 0; i < ObjectMemory.ReturnCellsSize(); ++i) {
-        if (i == TokenTypes::ObjectNameStarts){}
-        for (int j = i; j < ObjectMemory.ReturnCellsSize(); ++j) {
-            if (j == TokenTypes::ObjectNameEnds){
-                break;
+        if (ObjectMemory.GetCell(i).ReturnData() == TokenTypes::ObjectNameStarts){
+            for (int j = i; j < ObjectMemory.ReturnCellsSize(); ++j) {
+                if (ObjectMemory.GetCell(j).ReturnData() == TokenTypes::ObjectNameEnds){
+                    break;
+                }
+                Name+=ObjectMemory.GetCell(j).ReturnData();
             }
-            Name+=ObjectMemory.GetCell(j).ReturnData();
+            break;
         }
-        break;
     }
     for (int i = 0; i < ObjectMemory.ReturnCellsSize(); ++i) {
         if(ObjectMemory.GetCell(i).ReturnData() == FieldStarts){
@@ -67,14 +67,16 @@ Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespac
         }
         MethodsStacks.push_back(Data);
     }
+    Fields.reserve(FieldsStacks.size());
     for ( const Stack& Data : FieldsStacks) {
         Fields.push_back(*FieldAnalyzer::AnalyzeField(Data,Runtime));
     }
+    Methods.reserve(MethodsStacks.size());
     for ( const Stack& Data : MethodsStacks) {
         Methods.push_back(MethodAnalyzer::AnalyzeMethod(Data,Runtime));
     }
     for (int i = 0; i < ObjectMemory.ReturnCellsSize(); ++i) {
-        if (i == TokenTypes::ObjectType){
+        if (ObjectMemory.GetCell(i).ReturnData() == TokenTypes::ObjectType){
             switch (ObjectMemory.GetCell(i+1).ReturnData()) {
                 case STRUCT:{
                     return new Structure(Name,CurrentNamespace,Fields,Methods);
@@ -84,7 +86,6 @@ Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespac
                 }
             }
         }
-        break;
     }
     return nullptr;
 }
