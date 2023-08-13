@@ -7,6 +7,8 @@ set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 #add_executable(OmegaNaIGEN OmegaNaIGEN/cmplr.cpp OmegaNaIGEN/cmplr.h OmegaLoaderComponent/ldr.h OmegaLoaderComponent/ldr.cpp)
 #add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
 #add_executable(OmegaJIT OmegaJIT/main.cpp)
+add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/ArchitecturalDefines.cpp
+        OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h)
 add_library(OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h OmegaRuntime/Architecture/PrimitiveDataTypes/Cell.cpp
@@ -31,7 +33,19 @@ add_library(OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Reg
         OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Field.cpp  OmegaRuntime/Architecture/CTS/Type.h
         OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Field.h OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Method.cpp
         OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Method.h OmegaRuntime/Architecture/CTS/Type.cpp
-        OmegaRuntime/Architecture/CTS/Integer.cpp OmegaRuntime/Architecture/CTS/Integer.h OmegaRuntime/Architecture/CTS/String.cpp OmegaRuntime/Architecture/CTS/String.h OmegaRuntime/Runtime/Analyzer/Utility/CommandAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/CommandAnalyzer.h OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Parameter.h OmegaRuntime/Architecture/OperableTypes/IntegerParameter.cpp OmegaRuntime/Architecture/OperableTypes/IntegerParameter.h OmegaRuntime/Architecture/OperableTypes/StringParameters.cpp OmegaRuntime/Architecture/OperableTypes/StringParameters.h OmegaRuntime/Runtime/Analyzer/Utility/ParameterAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/ParameterAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/Range.cpp OmegaRuntime/Runtime/Analyzer/Utility/Range.h OmegaRuntime/Runtime/Analyzer/Utility/FieldAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/FieldAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/ObjectAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/ObjectAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/NamespaceAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/NamespaceAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/ModuleAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/ModuleAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/AssemblyAnalyzer.cpp OmegaRuntime/Runtime/Analyzer/Utility/AssemblyAnalyzer.h)
+        OmegaRuntime/Architecture/CTS/Integer.cpp OmegaRuntime/Architecture/CTS/Integer.h OmegaRuntime/Architecture/CTS/String.cpp
+        OmegaRuntime/Architecture/CTS/String.h OmegaRuntime/Runtime/Analyzer/Utility/CommandAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/CommandAnalyzer.h OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp
+        OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Parameter.h OmegaRuntime/Architecture/OperableTypes/IntegerParameter.cpp
+        OmegaRuntime/Architecture/OperableTypes/IntegerParameter.h OmegaRuntime/Architecture/OperableTypes/StringParameters.cpp
+        OmegaRuntime/Architecture/OperableTypes/StringParameters.h OmegaRuntime/Runtime/Analyzer/Utility/ParameterAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/ParameterAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/Range.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/Range.h OmegaRuntime/Runtime/Analyzer/Utility/FieldAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/FieldAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/ObjectAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/ObjectAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/NamespaceAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/NamespaceAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/ModuleAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/ModuleAnalyzer.h OmegaRuntime/Runtime/Analyzer/Utility/AssemblyAnalyzer.cpp
+        OmegaRuntime/Runtime/Analyzer/Utility/AssemblyAnalyzer.h)
 add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.cpp
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.h
@@ -48,6 +62,7 @@ add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstr
 #target_link_libraries(OmegaJITComponent PUBLIC OmegaRuntime)
 #target_link_libraries(OmegaJITComponent PUBLIC OmegaNaIGENComponent)
 target_link_libraries(OmegaRuntime PUBLIC OmegaSoftwareALComponent)
+target_link_libraries(OmegaRuntime PUBLIC OmegaCompilerService)
 #target_link_libraries(OmegaNaIGEN PUBLIC OmegaWriterComponent)
 #target_link_libraries(OmegaNaIGEN PUBLIC OmegaNaIGENComponent)
 #target_link_libraries(OmegaJIT PUBLIC OmegaWriterComponent)
