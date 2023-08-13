@@ -22,12 +22,11 @@ enum MethodParametersType {
     TInteger = 1
 };
 
-enum TokenTypes {
-    AssemblyToken = 0,
+enum TokenTypes { // Нужен общий рефакторинг. Положить по два токена в-
+    // структуры и уже на их основе переписать анализаторы.
     AssemblyNameStarts = 1,
     AssemblyNameEnds = 2,
-    AssemblyStarts = 26,
-    ModuleToken = 3,
+    ModuleStarts = 3332,
     ModuleNameStarts = 4,
     ModuleNameEnd = 5,
     NamespaceStarts = 6,
@@ -38,19 +37,17 @@ enum TokenTypes {
     ObjectNameStarts = 10,
     ObjectNameEnds = 11,
     FieldStarts = 30,
-    FieldType = 15,
     FieldNameStart = -34,
     FieldNameEnds = -20,
     FieldEnds = 31,
     MethodStarts = 28,
-    MethodNameStarts = 20,
     MethodNameEnds = 21,
     MethodParameterStart = 99,
     MethodParameterEnd = 100,
     MethodEnds = 29,
     ObjectEnds = -32,
     NamespaceEnds = -17,
-    AssemblyEnds = 27,
+    ModuleEnds = 3333,
     InstructionStarts = 99,
     InstructionEnds = 102,
     InstructionParameterTypeStart = 115,

@@ -5,7 +5,7 @@
 #include "NamespaceAnalyzer.h"
 #include "Range.h"
 
-Namespace *NamespaceAnalyzer::AnalyzeObject(Stack NamespaceMemoryPack, void * Runtime) {
+Namespace NamespaceAnalyzer::AnalyzeNamespace(Stack NamespaceMemoryPack, void * Runtime) {
     std::string Name;
     std::vector<Object*> Objects;
     std::vector<Range> ObjectsRanges;
@@ -48,5 +48,5 @@ Namespace *NamespaceAnalyzer::AnalyzeObject(Stack NamespaceMemoryPack, void * Ru
     for ( Object* Object : Objects) {
         CurrentNamespace->AppendObject(Object);
     }
-    return CurrentNamespace;
+    return *CurrentNamespace;
 }

@@ -12,7 +12,7 @@
 
 class NamespaceAnalyzer {
 public:
-    static Namespace* AnalyzeObject(Stack, void*);
+    static Namespace AnalyzeNamespace(Stack, void*);
 };
 
 
