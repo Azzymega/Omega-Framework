@@ -8,10 +8,11 @@
 
 #include <string>
 #include "../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "Token.h"
 
 class AssemblyTranslator {
 public:
-    static Stack TranslateAssembly(std::string);
+    static Stack TranslateAssembly(Token);
 };
 
 
