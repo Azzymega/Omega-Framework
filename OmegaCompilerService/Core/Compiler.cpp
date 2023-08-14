@@ -10,5 +10,6 @@ Stack Compiler::Compile(std::string AssemblyRawData) {
                                          AssemblyRawData.end(),
                                          ::isspace),
                           AssemblyRawData.end());
+
     return Stack();
 }

@@ -8,7 +8,7 @@ set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
 #add_executable(OmegaLoader OmegaLoader/bootstrap.cpp OmegaLoader/bootstrap.h LEGACYRuntime/microcode.cpp)
 #add_executable(OmegaJIT OmegaJIT/main.cpp)
 add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/ArchitecturalDefines.cpp
-        OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h)
+        OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h OmegaCompilerService/Core/AssemblyTranslator.cpp OmegaCompilerService/Core/AssemblyTranslator.h OmegaCompilerService/Core/TokenFinder.cpp OmegaCompilerService/Core/TokenFinder.h OmegaCompilerService/Core/Token.cpp OmegaCompilerService/Core/Token.h)
 add_library(OmegaRuntime SHARED OmegaRuntime/Architecture/PrimitiveDataTypes/Register.cpp OmegaRuntime/Architecture/PrimitiveDataTypes/Register.h OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.cpp
         OmegaRuntime/Architecture/ArchitecturalDefines/RegistersType.h OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.cpp
         OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h OmegaRuntime/Architecture/PrimitiveDataTypes/Cell.cpp

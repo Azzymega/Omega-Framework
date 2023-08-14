@@ -5,6 +5,16 @@
 #ifndef LEGACYRUNTIME_ARCHITECTURALDEFINES_H
 #define LEGACYRUNTIME_ARCHITECTURALDEFINES_H
 
+enum DefinitionTypes {
+    AssemblyT = 0,
+    ModuleT = 1,
+    NamespaceT = 2,
+    ClassT = 3,
+    Struct = 4,
+    MethodT = 5,
+    FieldT = 6,
+    Instruction = 7
+};
 
 enum TokenTypes {
     DefineStart = '.',
