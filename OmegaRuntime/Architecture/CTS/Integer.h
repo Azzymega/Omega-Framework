@@ -7,7 +7,7 @@
 
 
 #include "Type.h"
-#include "../ArchitecturalDefines/RegistersType.h"
+#include "../ArchitecturalDefines/Core/RegistersType.h"
 
 class Integer : public Type{
 private:

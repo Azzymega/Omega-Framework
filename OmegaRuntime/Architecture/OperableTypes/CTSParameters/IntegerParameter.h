@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_INTEGERPARAMETER_H
 
 
-#include "ObjectsPrimitives/Parameter.h"
-#include "../CTS/Integer.h"
+#include "../ObjectsPrimitives/Parameter.h"
+#include "../../CTS/Integer.h"
 
 class IntegerParameter : public Parameter{
 private:

@@ -4,7 +4,7 @@
 
 #include "AssemblyTranslator.h"
 
-Stack AssemblyTranslator::TranslateAssembly(Token AssemblyData) {
+Stack AssemblyTranslator::Translate(Token AssemblyData) {
     Stack AssemblyStack;
     std::string AssemblyName;
     AssemblyStack.AppendCell(Cell(TokenTypes::AssemblyNameStarts));

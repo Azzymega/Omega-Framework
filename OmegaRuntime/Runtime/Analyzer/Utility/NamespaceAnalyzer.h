@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_NAMESPACEANALYZER_H
 
 
-#include "../../../Architecture/OperableTypes/Namespace.h"
+#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
 #include "ObjectAnalyzer.h"
 

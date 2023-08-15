@@ -7,8 +7,8 @@
 
 
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../Architecture/OperableTypes/ObjectIdentifier.h"
-#include "../../../Architecture/OperableTypes/Namespace.h"
+#include "../../../Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
+#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
 
 class ObjectAnalyzer {
 public:

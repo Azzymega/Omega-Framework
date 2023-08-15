@@ -7,7 +7,7 @@
 
 
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../Architecture/OperableTypes/Module.h"
+#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Module.h"
 
 class ModuleAnalyzer {
 public:

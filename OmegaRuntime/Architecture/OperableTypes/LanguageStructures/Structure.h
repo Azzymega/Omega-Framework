@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_STRUCTURE_H
 
 
-#include "../ObjectIdentifier.h"
+#include "../RuntimeAbstractions/ObjectIdentifier.h"
 
 class Structure : public Object {
 public:

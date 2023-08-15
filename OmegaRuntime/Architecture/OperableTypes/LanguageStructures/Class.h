@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_CLASS_H
 
 
-#include "../ObjectIdentifier.h"
+#include "../RuntimeAbstractions/ObjectIdentifier.h"
 
 class Class : public Object {
 public:

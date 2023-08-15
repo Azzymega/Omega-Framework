@@ -16,7 +16,7 @@ enum DefinitionTypes {
     Instruction = 7
 };
 
-enum TokenTypes {
+enum BCFTokenTypes {
     DefineStart = '.',
     DefinitionStarts = '{',
     DefinitionEnds = '}'

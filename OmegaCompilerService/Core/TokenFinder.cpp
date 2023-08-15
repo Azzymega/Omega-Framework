@@ -10,14 +10,14 @@ Token TokenFinder::FindAssemblyData(std::string Data) {
     std::vector<char> Internals;
     for (int i = 0; i < Data.size(); ++i) {
         std::string Type;
-        if (Data.at(i) == TokenTypes::DefineStart){
+        if (Data.at(i) == BCFTokenTypes::DefineStart){
             for (int j = i; j < Data.size(); ++j) {
                 Type+=Data.at(j);
                 if (Type == ".assembly"){
                     for (int k = j; k < Data.size(); ++k) {
-                        if (Data.at(k) == TokenTypes::DefinitionStarts){
+                        if (Data.at(k) == BCFTokenTypes::DefinitionStarts){
                             for (int l = j+1; l < Data.size(); ++l) {
-                                if (Data.at(l) == TokenTypes::DefinitionEnds){
+                                if (Data.at(l) == BCFTokenTypes::DefinitionEnds){
                                     break;
                                 }
                                 Internals.push_back(Data.at(l));
@@ -40,21 +40,21 @@ Token TokenFinder::FindModuleData(std::string Data) {
     std::vector<char> Internals;
     for (int i = 0; i < Data.size(); ++i) {
         std::string Type;
-        if (Data.at(i) == TokenTypes::DefineStart){
+        if (Data.at(i) == BCFTokenTypes::DefineStart){
             for (int j = i; j < Data.size(); ++j) {
                 Type+=Data.at(j);
                 if (Type == ".module"){
                     for (int k = j; k < Data.size(); ++k) {
-                        if (Data.at(k) == TokenTypes::DefinitionStarts){
-                            for (int l = j+1; l < Data.size(); ++l) {
-                                if (Data.at(l) == TokenTypes::DefinitionEnds){
+                        if (Data.at(k) == BCFTokenTypes::DefinitionStarts){
+                            for (int l = k+1; l < Data.size(); ++l) {
+                                if (Data.at(l) == BCFTokenTypes::DefinitionEnds){
                                     break;
                                 }
                                 Internals.push_back(Data.at(l));
                             }
                             break;
                         }
-                        break;
+                        Name+=Data.at(k);
                     }
                     break;
                 }

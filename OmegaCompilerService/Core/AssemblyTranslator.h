@@ -9,10 +9,11 @@
 #include <string>
 #include "../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
 #include "Token.h"
+#include "AbstractTranslator.h"
 
-class AssemblyTranslator {
+class AssemblyTranslator  : public AbstractTranslator{
 public:
-    static Stack TranslateAssembly(Token);
+    Stack Translate(Token) override;
 };
 
 

@@ -4,8 +4,8 @@
 
 #include "ParameterAnalyzer.h"
 #include "../../../Architecture/CTS/String.h"
-#include "../../../Architecture/OperableTypes/StringParameters.h"
-#include "../../../Architecture/OperableTypes/IntegerParameter.h"
+#include "../../../Architecture/OperableTypes/CTSParameters/StringParameters.h"
+#include "../../../Architecture/OperableTypes/CTSParameters/IntegerParameter.h"
 
 Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
     switch (Data.GetCell(0).ReturnData()) {

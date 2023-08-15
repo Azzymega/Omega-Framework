@@ -12,7 +12,7 @@
 #include "../DataTypes/ROM.h"
 #include "../../Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
-#include "../../Architecture/OperableTypes/Assembly.h"
+#include "../../Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
 #include "../../Architecture/PrimitiveAbstractions/Command.h"
 
 class Runtime {

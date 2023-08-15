@@ -6,7 +6,7 @@
 #define LIBRNT_DEPOSITORY_H
 
 
-#include "../ArchitecturalDefines/RegistersType.h"
+#include "../ArchitecturalDefines/Core/RegistersType.h"
 
 class Depository {
 protected:

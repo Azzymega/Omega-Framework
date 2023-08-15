@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_STRINGPARAMETERS_H
 
 
-#include "ObjectsPrimitives/Parameter.h"
-#include "../CTS/String.h"
+#include "../ObjectsPrimitives/Parameter.h"
+#include "../../CTS/String.h"
 
 class StringParameters : public Parameter {
 private:

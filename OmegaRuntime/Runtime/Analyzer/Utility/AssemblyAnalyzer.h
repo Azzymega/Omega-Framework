@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_ASSEMBLYANALYZER_H
 
 
-#include "../../../Architecture/OperableTypes/Assembly.h"
+#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
 
 class AssemblyAnalyzer {
