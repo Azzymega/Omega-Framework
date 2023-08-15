@@ -6,12 +6,12 @@
 #define LEGACYRUNTIME_ARCHITECTURALDEFINES_H
 
 enum ILTokenTypes {
-    ASSEMBLY = 0,
-    MODULE = 1,
-    NAMESPACE = 2,
-    CLASS = 3,
-    METHOD = 4,
-    INSTRUCTION = 5
+    TASSEMBLY = 0,
+    TMODULE = 1,
+    TNAMESPACE = 2,
+    TCLASS = 3,
+    TMETHOD = 4,
+    TINSTRUCTION = 5
 };
 
 enum ILUtility {

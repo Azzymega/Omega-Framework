@@ -3,7 +3,6 @@
 //
 
 #include "InstructionParser.h"
-#include "../Core/InstructionToken.h"
 
 AbstractToken* InstructionParser::ParseToken(std::vector<char> Data) {
     std::string Name;

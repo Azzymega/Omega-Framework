@@ -5,7 +5,7 @@
 #ifndef LEGACYRUNTIME_INSTRUCTIONPARSER_H
 #define LEGACYRUNTIME_INSTRUCTIONPARSER_H
 
-
+#include "../Core/InstructionToken.h"
 #include "AbstractParser.h"
 
 class InstructionParser : public AbstractParser{

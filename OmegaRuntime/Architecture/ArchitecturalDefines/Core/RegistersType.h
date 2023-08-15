@@ -14,7 +14,7 @@ enum ModulesType {
 
 enum ObjectTypes {
     STRUCT = -44,
-    CLASS = -55,
+    CLASS = -55
 };
 
 enum MethodParametersType {
