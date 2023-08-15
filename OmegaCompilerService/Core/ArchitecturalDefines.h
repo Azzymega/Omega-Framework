@@ -1,25 +1,22 @@
 //
-// Created by Danil on 13.08.2023.
+// Created by Danil on 15.08.2023.
 //
 
 #ifndef LEGACYRUNTIME_ARCHITECTURALDEFINES_H
 #define LEGACYRUNTIME_ARCHITECTURALDEFINES_H
 
-enum DefinitionTypes {
-    AssemblyT = 0,
-    ModuleT = 1,
-    NamespaceT = 2,
-    ClassT = 3,
-    Struct = 4,
-    MethodT = 5,
-    FieldT = 6,
-    Instruction = 7
+enum ILTokenTypes {
+    ASSEMBLY = 0,
+    MODULE = 1,
+    NAMESPACE = 2,
+    CLASS = 3,
+    METHOD = 4,
+    INSTRUCTION = 5
 };
 
-enum BCFTokenTypes {
-    DefineStart = '.',
-    DefinitionStarts = '{',
-    DefinitionEnds = '}'
+enum ILUtility {
+    INSTRUCTION_NAME_END = '.',
+    INSTRUCTION_END = ';'
 };
 
 
