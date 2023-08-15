@@ -9,6 +9,8 @@
 #include "../../CTS/Type.h"
 
 class Parameter {
+protected:
+    int Number;
 public:
     virtual Type* ReturnParameter() = 0;
 };

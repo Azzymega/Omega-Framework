@@ -13,7 +13,7 @@ class IntegerParameter : public Parameter{
 private:
     Integer Data;
 public:
-    IntegerParameter(Integer);
+    IntegerParameter(Integer,int);
     Type * ReturnParameter() override;
 };
 

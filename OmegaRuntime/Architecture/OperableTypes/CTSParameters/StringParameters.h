@@ -13,7 +13,7 @@ class StringParameters : public Parameter {
 private:
     class String Data;
 public:
-    StringParameters(class String);
+    StringParameters(class String,int);
     Type * ReturnParameter() override;
 };
 

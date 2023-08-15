@@ -4,8 +4,8 @@
 
 #include "IntegerParameter.h"
 
-IntegerParameter::IntegerParameter(Integer Data) : Data(Data){
-
+IntegerParameter::IntegerParameter(Integer Data, int Number) : Data(Data){
+    this->Number = Number;
 }
 
 Type *IntegerParameter::ReturnParameter() {

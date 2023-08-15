@@ -4,7 +4,8 @@
 
 #include "StringParameters.h"
 
-StringParameters::StringParameters(class String Data) : Data(Data){
+StringParameters::StringParameters(class String Data,int Number) : Data(Data){
+    this->Number = Number;
 }
 
 Type *StringParameters::ReturnParameter() {
