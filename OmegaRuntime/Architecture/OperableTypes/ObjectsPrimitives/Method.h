@@ -13,17 +13,17 @@
 class Method {
 private:
     std::string Name;
-    MethodParametersType ReturnType;
+    std::string ReturnType;
     std::vector<Parameter*> Parameters;
-    std::vector<MethodParametersType> ParametersTypes;
+    std::vector<std::string> ParametersTypes;
     std::vector<Command*> Operations;
 public:
-    Method(std::string,MethodParametersType);
+    Method(std::string,std::string);
     void Execute();
     std::string ReturnName();
     void AppendParameter(Parameter*);
     void AppendOperation(Command*);
-    void AppendParameterType(MethodParametersType);
+    void AppendParameterType(std::string);
 };
 
 

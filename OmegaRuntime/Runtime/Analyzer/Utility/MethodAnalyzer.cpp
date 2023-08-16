@@ -13,18 +13,35 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
     std::vector<Stack> InstructionsStack;
     std::vector<Range> ParametersRanges;
     std::vector<Range> InstructionRanges;
+    std::string ReturnType;
     std::vector<Parameter*> Params;
     std::vector<MethodParametersType> ParametersTypes;
-    int Pointer = 0;
-    MethodParametersType ReturnType =
-            static_cast<MethodParametersType>(MethodMemoryMap.GetCell(Pointer).ReturnData());
+    for (int i = 0; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
+        if(MethodMemoryMap.GetCell(i).ReturnData() == MethodReturnTypeStarts){
+            for (int j = i; j < MethodMemoryMap.ReturnCellsSize(); ++j) {
+                ReturnType+=MethodMemoryMap.GetCell(j).ReturnData();
+                if (MethodMemoryMap.GetCell(j).ReturnData() == MethodReturnTypeEnds){
+                    break;
+                }
+                break;
+            }
+            break;
+        }
+    }
     std::string MethodName;
-    Pointer+=2;
-    for (; MethodMemoryMap.GetCell(Pointer).ReturnData() != MethodNameEnds; ++Pointer) {
-        MethodName+=MethodMemoryMap.GetCell(Pointer).ReturnData();
+    for (int i = 0; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
+        if(MethodMemoryMap.GetCell(i).ReturnData() == MethodNameStarts){
+            for (int j = i; j < MethodMemoryMap.ReturnCellsSize(); ++j) {
+                MethodName+=MethodMemoryMap.GetCell(j).ReturnData();
+                if (MethodMemoryMap.GetCell(j).ReturnData() == MethodNameEnds){
+                    break;
+                }
+                break;
+            }
+            break;
+        }
     }
     Method CurrentMethod = Method(MethodName,ReturnType);
-    Pointer+=2;
     for (int i = 0; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
         if(MethodMemoryMap.GetCell(i).ReturnData() == MethodParameterStart){
             Range CurrentRange = Range();

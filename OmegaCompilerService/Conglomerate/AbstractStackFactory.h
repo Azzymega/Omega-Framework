@@ -10,8 +10,7 @@
 #include "../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
 
 class AbstractStackFactory {
-public:
-    virtual Stack BuildStack(AbstractToken*) = 0;
+
 };
 
 

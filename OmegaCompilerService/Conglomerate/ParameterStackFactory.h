@@ -10,7 +10,7 @@
 
 class ParameterStackFactory : public AbstractStackFactory {
 public:
-    Stack BuildStack(AbstractToken *) override;
+    Stack BuildStack(AbstractToken *);
 };
 
 

@@ -19,3 +19,17 @@ Stack::Stack() {
 int Stack::ReturnCellsSize() {
     return Cells.size();
 }
+
+void Stack::AppendStackToStack(Stack AnotherStack) {
+    for ( Cell CurrentCell : AnotherStack.Cells) {
+        this->AppendCell(CurrentCell);
+    }
+}
+
+void Stack::AppendVectorOfStackToStack(std::vector<Stack> AnotherStacks) {
+    for ( Stack AnotherStack : AnotherStacks) {
+        for (Cell CurrentCell: AnotherStack.Cells) {
+            this->AppendCell(CurrentCell);
+        }
+    }
+}

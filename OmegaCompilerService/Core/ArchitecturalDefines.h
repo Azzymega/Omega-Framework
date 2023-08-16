@@ -15,6 +15,9 @@ enum ILTokenTypes {
 };
 
 enum ILUtility {
+    INTERNALS_BEGINS = '{',
+    INTERNALS_ENDS = '}',
+    DEFINITION_TOKEN = '.',
     INSTRUCTION_NAME_END = '.',
     INSTRUCTION_END = ';'
 };

@@ -1,0 +1,14 @@
+//
+// Created by Danil on 16.08.2023.
+//
+
+#ifndef LEGACYRUNTIME_METHODSTACKFACTORY_H
+#define LEGACYRUNTIME_METHODSTACKFACTORY_H
+
+
+class MethodStackFactory {
+
+};
+
+
+#endif //LEGACYRUNTIME_METHODSTACKFACTORY_H

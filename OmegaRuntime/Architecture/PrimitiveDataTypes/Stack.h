@@ -18,6 +18,8 @@ public:
     int ReturnCellsSize();
     void AppendCell(Cell);
     Cell GetCell(int);
+    void AppendStackToStack(Stack);
+    void AppendVectorOfStackToStack(std::vector<Stack>);
 };
 
 

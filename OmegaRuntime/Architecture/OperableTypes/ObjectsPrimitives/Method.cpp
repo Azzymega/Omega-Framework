@@ -12,11 +12,11 @@ void Method::AppendOperation(Command* Operation) {
     this->Operations.push_back(Operation);
 }
 
-void Method::AppendParameterType(MethodParametersType Type) {
+void Method::AppendParameterType(std::string Type) {
     this->ParametersTypes.push_back(Type);
 }
 
-Method::Method(std::string, MethodParametersType MethodParameterType) {
+Method::Method(std::string, std::string MethodParameterType) {
     this->Name = Name;
     this->ReturnType = MethodParameterType;
 }

@@ -41,6 +41,7 @@ enum TokenTypes { // Нужен общий рефакторинг. Положи�
     FieldNameEnds = -20,
     FieldEnds = 31,
     MethodStarts = 28,
+    MethodNameStarts = 3333333,
     MethodNameEnds = 21,
     MethodParameterStart = 99,
     MethodParameterEnd = 100,
@@ -51,7 +52,11 @@ enum TokenTypes { // Нужен общий рефакторинг. Положи�
     InstructionStarts = 99,
     InstructionEnds = 102,
     InstructionParameterTypeStart = 115,
-    InstructionParameterTypeEnds = 114
+    InstructionParameterTypeEnds = 114,
+    MethodTypeStarts = 324423,
+    MethodTypeEnds = 324422,
+    MethodReturnTypeStarts = 33333,
+    MethodReturnTypeEnds = 322456
 };
 
 enum Microcode {

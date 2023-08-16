@@ -10,7 +10,7 @@
 
 class InstructionStackFactory : public AbstractStackFactory{
 public:
-    Stack BuildStack(AbstractToken *) override;
+    Stack BuildStack(InstructionToken *, std::vector<Stack>);
 };
 
 
