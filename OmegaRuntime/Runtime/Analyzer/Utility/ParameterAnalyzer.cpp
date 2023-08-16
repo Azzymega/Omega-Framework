@@ -12,13 +12,17 @@ Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
     switch (Data.GetCell(1).ReturnData()) {
         case TString:{
             std::vector<char> Characters = std::vector<char>();
-            for (int i = 1; i < Data.ReturnCellsSize(); ++i) {
+            for (int i = 2; i < Data.ReturnCellsSize(); ++i) {
                 Characters.push_back(Data.GetCell(i).ReturnData());
             }
             return new StringParameters(String(Characters),Number);
         }
         case TInteger:{
-            return new IntegerParameter(Integer(Data.GetCell(2).ReturnData()),Number);
+            std::string Digits;
+            for (int i = 2; i < Data.ReturnCellsSize(); ++i) {
+                Digits.push_back(Data.GetCell(i).ReturnData());
+            }
+            return new IntegerParameter(Integer(stoi(Digits)),Number);
         }
         default:{
             return nullptr;

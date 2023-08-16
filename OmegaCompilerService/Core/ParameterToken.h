@@ -11,9 +11,13 @@
 
 class ParameterToken : public AbstractToken{
 private:
+    int Number;
     MethodParametersType Type;
 public:
-    ParameterToken(std::string unnamed, std::vector<char> unnamed1, MethodParametersType);
+    ParameterToken(std::string unnamed2, std::vector<char> unnamed3, MethodParametersType, int);
+    int ReturnNumber();
+    MethodParametersType ReturnType();
+    std::vector<char> ReturnInternals();
 };
 
 

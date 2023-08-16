@@ -8,6 +8,7 @@
 
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
 #include "../../../Architecture/OperableTypes/ObjectsPrimitives/Parameter.h"
+#include <string>
 
 class ParameterAnalyzer {
 public:

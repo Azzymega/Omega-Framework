@@ -3,7 +3,15 @@
 //
 
 #include "ParameterParser.h"
+#include "../Core/ParameterToken.h"
 
 AbstractToken* ParameterParser::ParseToken(std::vector<char> Data) {
-    return nullptr;
+    MethodParametersType Type;
+    if (isdigit(Data.at(0))){
+        Type = MethodParametersType::TString;
+    }
+    else{
+        Type = MethodParametersType::TInteger;
+    }
+    return new ParameterToken("",Data,Type,0);
 }
