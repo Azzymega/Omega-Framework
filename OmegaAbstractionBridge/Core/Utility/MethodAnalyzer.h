@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_METHODANALYZER_H
 
 
-#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Method.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.h"
 #include "ParameterAnalyzer.h"
 
 class MethodAnalyzer {

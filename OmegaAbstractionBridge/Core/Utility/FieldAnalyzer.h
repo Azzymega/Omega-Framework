@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_FIELDANALYZER_H
 
 
-#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Field.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Field.h"
 
 class FieldAnalyzer {
 public:

@@ -5,7 +5,7 @@
 #ifndef LEGACYRUNTIME_SLOAD_H
 #define LEGACYRUNTIME_SLOAD_H
 
-#include "../../Runtime/Core/Runtime.h"
+#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
 #include "../PrimitiveAbstractions/Command.h"
 
 class Sload  : public Command {

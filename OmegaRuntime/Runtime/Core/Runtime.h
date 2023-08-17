@@ -7,13 +7,12 @@
 
 #include <vector>
 #include <stack>
-#include "../../Architecture/PrimitiveAbstractions/Depository.h"
-#include "../../Architecture/PrimitiveDataTypes//Stack.h"
-#include "../DataTypes/ROM.h"
-#include "../../Architecture/PrimitiveDataTypes/Registry.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Depository.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes//Stack.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
-#include "../../Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
-#include "../../Architecture/PrimitiveAbstractions/Command.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h"
 
 class Runtime {
 private:

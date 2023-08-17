@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_COMPILER_H
 
 
-#include "../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
 
 class Compiler {
 private:

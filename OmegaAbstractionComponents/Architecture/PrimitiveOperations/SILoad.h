@@ -5,7 +5,7 @@
 #ifndef LEGACYRUNTIME_SILOAD_H
 #define LEGACYRUNTIME_SILOAD_H
 
-#include "../../Runtime/Core/Runtime.h"
+#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
 #include "../PrimitiveAbstractions/Command.h"
 
 class SILoad : public Command {

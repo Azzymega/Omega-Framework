@@ -6,9 +6,9 @@
 #define LEGACYRUNTIME_OBJECTANALYZER_H
 
 
-#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
-#include "../../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
 
 class ObjectAnalyzer {
 public:

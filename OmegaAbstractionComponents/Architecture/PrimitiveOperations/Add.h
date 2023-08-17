@@ -5,7 +5,7 @@
 #ifndef LEGACYRUNTIME_ADD_H
 #define LEGACYRUNTIME_ADD_H
 
-#include "../../Runtime/Core/Runtime.h"
+#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
 #include "../PrimitiveAbstractions/Command.h"
 
 class Add : public Command{

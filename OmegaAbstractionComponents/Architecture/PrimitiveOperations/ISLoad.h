@@ -5,7 +5,7 @@
 #ifndef LEGACYRUNTIME_ISLOAD_H
 #define LEGACYRUNTIME_ISLOAD_H
 
-#include "../../Runtime/Core/Runtime.h"
+#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
 #include "../PrimitiveAbstractions/Command.h"
 
 class ISLoad : public Command {

@@ -7,7 +7,7 @@
 
 
 #include "../Core/AbstractToken.h"
-#include "../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
 
 class AbstractStackFactory {
 

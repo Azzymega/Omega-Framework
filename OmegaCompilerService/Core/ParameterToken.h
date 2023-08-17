@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_PARAMETERTOKEN_H
 
 
-#include "../../OmegaRuntime/Architecture/ArchitecturalDefines/Core/RegistersType.h"
+#include "../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/RegistersType.h"
 #include "AbstractToken.h"
 
 class ParameterToken : public AbstractToken{

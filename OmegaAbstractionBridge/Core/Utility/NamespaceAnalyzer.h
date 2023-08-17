@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_NAMESPACEANALYZER_H
 
 
-#include "../../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
-#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
 #include "ObjectAnalyzer.h"
 
 class NamespaceAnalyzer {

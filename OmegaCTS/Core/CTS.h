@@ -9,7 +9,7 @@
 #include <map>
 #include <string>
 #include "Type.h"
-#include "../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
+#include "../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
 
 class CTS {
 private:
