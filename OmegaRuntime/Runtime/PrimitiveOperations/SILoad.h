@@ -5,8 +5,8 @@
 #ifndef LEGACYRUNTIME_SILOAD_H
 #define LEGACYRUNTIME_SILOAD_H
 
-#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
-#include "../PrimitiveAbstractions/Command.h"
+#include "../Core/Runtime.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h"
 
 class SILoad : public Command {
 public:

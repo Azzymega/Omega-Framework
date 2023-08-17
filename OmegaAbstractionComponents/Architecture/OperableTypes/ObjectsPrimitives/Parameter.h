@@ -8,15 +8,13 @@
 
 #include <string>
 #include <vector>
-#include "../../../../OmegaCTS/Core/CTSObject.h"
+#include "../../../../OmegaCTS/Core/Type.h"
 
-class Parameter {
+class Parameter : public Type{
 protected:
-    std::string TypeName;
     int Number;
-    std::vector<CTSObject*> IncludedTypes;
 public:
-    virtual CTSObject* ReturnParameter() = 0;
+    Parameter(TypeT currentType, std::wstring name, int Number);
 };
 
 

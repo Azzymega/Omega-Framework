@@ -12,6 +12,6 @@ PString::PString(std::wstring name, std::wstring Data) : PrimitiveReturnables(PR
     this->Data = Data;
 }
 
-PString::PString() : PrimitiveReturnables(PRIMITIVE_WSTRING, std::wstring(reinterpret_cast<const wchar_t *>("null"))) {
+PString::PString() : PrimitiveReturnables(PRIMITIVE_WSTRING, std::wstring(L"null")) {
 
 }

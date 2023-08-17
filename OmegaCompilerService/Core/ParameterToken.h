@@ -6,7 +6,7 @@
 #define LEGACYRUNTIME_PARAMETERTOKEN_H
 
 
-#include "../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/RegistersType.h"
+#include "../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/Core.h"
 #include "AbstractToken.h"
 
 class ParameterToken : public AbstractToken{

@@ -12,7 +12,6 @@ void SystemInteger::SetInt(int Data) {
     *reinterpret_cast<int*>(static_cast<PInteger *>(this->Internals[0])->ReturnData()) = Data;
 }
 
-SystemInteger::SystemInteger() : Type(OBJECT_WITH_FIELDS, std::wstring(
-        reinterpret_cast<const wchar_t *>("System::Integer"))) {
+SystemInteger::SystemInteger() : Type(OBJECT_WITH_FIELDS, std::wstring((L"System::Integer"))) {
     this->Internals.push_back(new PInteger());
 }

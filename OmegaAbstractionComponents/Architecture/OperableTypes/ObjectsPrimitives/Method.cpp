@@ -4,7 +4,9 @@
 
 #include "Method.h"
 
-void Method::AppendParameter(Parameter* Field) {
+#include <utility>
+
+void Method::AppendParameter(const Parameter& Field) {
     this->Parameters.push_back(Field);
 }
 
@@ -12,9 +14,9 @@ void Method::AppendOperation(Command* Operation) {
     this->Operations.push_back(Operation);
 }
 
-Method::Method(std::string, std::string MethodParameterType) {
+Method::Method(const std::string& Name, std::string MethodParameterType) {
     this->Name = Name;
-    this->ReturnType = MethodParameterType;
+    this->ReturnType = std::move(MethodParameterType);
 }
 
 std::string Method::ReturnName() {

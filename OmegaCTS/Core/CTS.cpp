@@ -6,9 +6,7 @@
 #include "../BTS/SystemInteger.h"
 #include "../BTS/SystemString.h"
 
-#include <utility>
-
-CTS::CTS() { // Инициализация самых примитивных типов
+CTS::CTS() {
     auto* Integer = new SystemInteger();
     auto* String = new SystemString();
     this->TypeList[Integer->ReturnName()] = Integer;
@@ -21,9 +19,7 @@ void CTS::AppendType(Object CurrentObject) {
 }
 
 Type *CTS::ConstructType(Object CurrentObject) {
-    Type* CurrentType = new Type(OBJECT_WITH_FIELDS,
-                                 std::wstring(CurrentObject.ReturnName().begin()
-                                              , CurrentObject.ReturnName().end()));
+    Type* CurrentType = new Type(OBJECT_WITH_FIELDS,CurrentObject.ReturnName());
     for ( Field CurrentField : CurrentObject.ReturnFields()) {
         CurrentType->AppendInternals(CurrentField.ReturnType());
     }
@@ -32,4 +28,11 @@ Type *CTS::ConstructType(Object CurrentObject) {
 
 Type* CTS::ReturnAllocatedType(const std::wstring& TypeName) {
     return new Type(*TypeList[TypeName]);
+}
+
+void CTS::InitializeAssemblyTypeSystem(Assembly CurrentAssembly) {
+    std::vector<Object> FullMetadata = CurrentAssembly.ReturnAllAssemblyMetadata();
+    for (const Object& CurrentObject : FullMetadata) {
+        AppendType(CurrentObject);
+    }
 }

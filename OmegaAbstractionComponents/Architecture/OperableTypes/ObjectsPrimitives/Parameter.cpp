@@ -4,3 +4,6 @@
 
 #include "Parameter.h"
 
+Parameter::Parameter(TypeT currentType, std::wstring name, int Number) : Type(currentType, name) {
+    this->Number = Number;
+}

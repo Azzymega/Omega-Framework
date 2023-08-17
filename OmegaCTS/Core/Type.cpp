@@ -18,6 +18,7 @@ CTSObject *Type::ReturnParameterByName(std::wstring ParameterName) {
             return Obj;
         }
     }
+    return nullptr;
 }
 
 CTSObject *Type::ReturnParameterByIndex(int ParameterIndex) {

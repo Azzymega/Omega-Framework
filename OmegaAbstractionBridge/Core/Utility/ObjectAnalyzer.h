@@ -7,7 +7,7 @@
 
 
 #include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
+#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Object.h"
 #include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h"
 
 class ObjectAnalyzer {

@@ -4,8 +4,7 @@
 
 #include "SystemString.h"
 
-SystemString::SystemString() : Type(OBJECT_WITH_FIELDS, std::wstring(
-        reinterpret_cast<const wchar_t *>("System::String"))) {
+SystemString::SystemString() : Type(OBJECT_WITH_FIELDS, std::wstring((L"System::String"))) {
     this->Internals.push_back(new PString());
 }
 

@@ -7,7 +7,7 @@
 
 
 #include "AbstractToken.h"
-#include "../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/RegistersType.h"
+#include "../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/Core.h"
 
 class InstructionToken : public AbstractToken {
 private:

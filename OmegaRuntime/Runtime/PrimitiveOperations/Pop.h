@@ -5,8 +5,8 @@
 #ifndef LEGACYRUNTIME_POP_H
 #define LEGACYRUNTIME_POP_H
 
-#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
-#include "../PrimitiveAbstractions/Command.h"
+#include "../Core/Runtime.h"
+#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h"
 
 class Pop : public Command {
 public:

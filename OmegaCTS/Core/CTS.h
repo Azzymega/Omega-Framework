@@ -7,17 +7,20 @@
 
 
 #include <map>
+
 #include <string>
 #include "Type.h"
-#include "../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.h"
+#include "../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Object.h"
+#include "../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
 
 class CTS {
 private:
     std::map<std::wstring,Type*> TypeList;
-    Type* ConstructType(Object);
+    static Type* ConstructType(Object);
 public:
     CTS();
     void AppendType(Object);
+    void InitializeAssemblyTypeSystem(Assembly);
     Type* ReturnAllocatedType(const std::wstring& TypeName);
 };
 

@@ -5,9 +5,9 @@ set(CMAKE_CXX_FLAGS -static-libstdc++)
 set(CMAKE_CXX_FLAGS -Wall)
 set(CMAKE_CXX_STANDARD 17)
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
-add_library(OmegaAbstractionComponents SHARED OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Register.cpp
-        OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Register.h OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/RegistersType.cpp
-        OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/RegistersType.h OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.cpp
+add_library(OmegaAbstractionComponents STATIC OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Register.cpp
+        OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Register.h
+        OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/Core.h OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.cpp
         OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Stack.h OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Cell.cpp
         OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Cell.h
         OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Registry.cpp
@@ -15,19 +15,21 @@ add_library(OmegaAbstractionComponents SHARED OmegaAbstractionComponents/Archite
         OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Depository.cpp
         OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Depository.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Archive.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Archive.h
         OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Assembly.h OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Module.h OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ModuleType.h
-        OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h OmegaAbstractionComponents/Architecture/ArchitecturalDefines/RuntimeArtifacts/OEX.cpp OmegaAbstractionComponents/Architecture/ArchitecturalDefines/RuntimeArtifacts/RLL.h
+        OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.h
         OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Module.cpp OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Assembly.cpp OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ModuleType.cpp
-        OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.cpp OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/ObjectIdentifier.cpp OmegaAbstractionComponents/Architecture/ArchitecturalDefines/RuntimeArtifacts/RLL.cpp
-        OmegaAbstractionComponents/Architecture/OperableTypes/LanguageStructures/Structure.cpp OmegaAbstractionComponents/Architecture/OperableTypes/LanguageStructures/Structure.h
-        OmegaAbstractionComponents/Architecture/PrimitiveOperations/Add.cpp
-        OmegaAbstractionComponents/Architecture/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h
-        OmegaAbstractionComponents/Architecture/PrimitiveOperations/Sload.cpp OmegaAbstractionComponents/Architecture/PrimitiveOperations/Sload.h OmegaAbstractionComponents/Architecture/PrimitiveOperations/ISLoad.cpp
-        OmegaAbstractionComponents/Architecture/PrimitiveOperations/ISLoad.h OmegaAbstractionComponents/Architecture/PrimitiveOperations/SILoad.cpp OmegaAbstractionComponents/Architecture/PrimitiveOperations/SILoad.h
-        OmegaAbstractionComponents/Architecture/PrimitiveOperations/Pop.cpp OmegaAbstractionComponents/Architecture/PrimitiveOperations/Pop.h
-        OmegaAbstractionComponents/Architecture/OperableTypes/LanguageStructures/Class.cpp OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.cpp OmegaAbstractionComponents/Architecture/OperableTypes/LanguageStructures/Class.h
+        OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Namespace.cpp OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Object.cpp
+        OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.cpp
         OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Field.cpp
         OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Field.h OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.cpp
-        OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.h)
+        OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Method.h Test/main.cpp OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp)
+add_library(OmegaCTS STATIC OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS/Core/ArchitecturalDefines.h OmegaCTS/Core/CTSObject.h
+        OmegaCTS/Core/Object.cpp OmegaCTS/Primitives/PrimitiveReturnables.cpp OmegaCTS/Primitives/PrimitiveReturnables.h
+        OmegaCTS/Primitives/PInteger.cpp OmegaCTS/Primitives/PInteger.h OmegaCTS/Primitives/PString.cpp OmegaCTS/Primitives/PString.h
+        OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h
+        OmegaCTS/Core/CTS.h
+        OmegaCTS/Core/CTS.cpp)
+add_executable(OM Test/main.cpp)
+#[===[
 add_library(OmegaAbstractionBridge SHARED OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp
         OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.h OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp
         OmegaAbstractionBridge/Core/Utility/ParameterAnalyzer.cpp
@@ -40,11 +42,6 @@ add_library(OmegaAbstractionBridge SHARED OmegaAbstractionBridge/Core/Utility/Co
         OmegaAbstractionBridge/Core/Utility/MethodAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/MethodAnalyzer.h
         OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.cpp OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.h
         OmegaAbstractionBridge/Core/Utility/AssemblyAnalyzer.h)
-add_library(OmegaCTS SHARED OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS/Core/ArchitecturalDefines.h OmegaCTS/Core/CTSObject.h
-        OmegaCTS/Core/Object.cpp OmegaCTS/Primitives/PrimitiveReturnables.cpp OmegaCTS/Primitives/PrimitiveReturnables.h
-        OmegaCTS/Primitives/PInteger.cpp OmegaCTS/Primitives/PInteger.h OmegaCTS/Primitives/PString.cpp OmegaCTS/Primitives/PString.h
-        OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h
-        OmegaCTS/Core/CTS.cpp OmegaCTS/Core/CTS.h)
 add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/AbstractToken.cpp
         OmegaCompilerService/Core/AbstractToken.h OmegaCompilerService/Parsers/AbstractParser.cpp OmegaCompilerService/Parsers/AbstractParser.h OmegaCompilerService/Parsers/InstructionParser.cpp
         OmegaCompilerService/Parsers/InstructionParser.h OmegaCompilerService/Core/InstructionToken.cpp OmegaCompilerService/Core/InstructionToken.h OmegaCompilerService/Conglomerate/InstructionStackFactory.cpp
@@ -57,7 +54,11 @@ add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/Compiler.cpp O
         OmegaCompilerService/Parsers/FieldParser.h OmegaCompilerService/Core/FieldToken.cpp OmegaCompilerService/Core/FieldToken.h OmegaCompilerService/Conglomerate/FieldStackFactory.cpp
         OmegaCompilerService/Conglomerate/FieldStackFactory.h)
 add_library(OmegaRuntime SHARED
-        OmegaRuntime/Runtime/Core/Runtime.cpp OmegaRuntime/Runtime/Core/Runtime.h )
+        OmegaRuntime/Runtime/Core/Runtime.cpp OmegaRuntime/Runtime/Core/Runtime.h OmegaRuntime/Runtime/PrimitiveOperations/Add.cpp
+        OmegaRuntime/Runtime/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h
+        OmegaRuntime/Runtime/PrimitiveOperations/Sload.cpp OmegaRuntime/Runtime/PrimitiveOperations/Sload.h OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.cpp
+        OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.h OmegaRuntime/Runtime/PrimitiveOperations/SILoad.cpp OmegaRuntime/Runtime/PrimitiveOperations/SILoad.h
+        OmegaRuntime/Runtime/PrimitiveOperations/Pop.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pop.h)
 add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstractions/SystemCall.cpp OmegaSoftwareALComponent/BasicAbstractions/SystemCall.h
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.cpp
         OmegaSoftwareALComponent/BasicAbstractions/SoftwareAbstractionLayer.h
@@ -65,4 +66,6 @@ add_library( OmegaSoftwareALComponent SHARED OmegaSoftwareALComponent/BasicAbstr
         OmegaSoftwareALComponent/SystemCalls/GetSystemCall.h OmegaSoftwareALComponent/Manager/SystemCallManager.cpp OmegaSoftwareALComponent/Manager/SystemCallManager.h
         OmegaSoftwareALComponent/Utility/AbstractData.cpp OmegaSoftwareALComponent/Utility/AbstractData.h)
 
-# Переработать
+]===]
+target_link_libraries(OM PUBLIC OmegaCTS)
+target_link_libraries(OM PUBLIC OmegaAbstractionComponents)

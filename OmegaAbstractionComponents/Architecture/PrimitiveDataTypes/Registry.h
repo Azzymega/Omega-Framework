@@ -8,7 +8,7 @@
 
 #include <map>
 #include "../PrimitiveAbstractions/Archive.h"
-#include "../ArchitecturalDefines/Core/RegistersType.h"
+#include "../ArchitecturalDefines/Core/Core.h"
 #include "../../../OmegaCTS/Core/CTSObject.h"
 
 class Registry : public Archive{

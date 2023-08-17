@@ -4,9 +4,11 @@
 
 #include "Field.h"
 
-Field::Field(struct Type * Data, std::string Name) {
-    this->Type = reinterpret_cast<CTSObject *>(Data);
-    this->Name = Name;
+#include <utility>
+
+Field::Field(class Type * Data, std::wstring Name) {
+    this->Type = Data;
+    this->Name = std::move(Name);
 }
 
 CTSObject *Field::ReturnType() {

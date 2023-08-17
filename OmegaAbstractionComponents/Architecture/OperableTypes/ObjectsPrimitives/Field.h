@@ -7,15 +7,15 @@
 
 
 #include <string>
-#include "../../../../OmegaCTS/Core/CTSObject.h"
+#include "../../../../OmegaCTS/Core/Type.h"
 
 class Field {
 protected:
-    CTSObject* Type;
-    std::string Name;
+    Type* Type;
+    std::wstring Name;
 public:
     CTSObject* ReturnType();
-    Field(class Type*,std::string);
+    Field(class Type*,std::wstring);
 };
 
 
