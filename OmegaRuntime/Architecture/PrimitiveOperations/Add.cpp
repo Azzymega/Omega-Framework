@@ -7,10 +7,12 @@
 
 
 Word Add::PerformOperation() {
+    /*
     SystemInteger* x = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
     SystemInteger* y = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
     static_cast<class Runtime*>(Runtime)->PushToStack
             (new SystemInteger(PRIMITIVE_INTEGER, std::wstring()));
+            */
     return 0;
 }
 

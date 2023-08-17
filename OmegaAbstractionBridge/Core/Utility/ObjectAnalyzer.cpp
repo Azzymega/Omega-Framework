@@ -6,7 +6,7 @@
 #include "FieldAnalyzer.h"
 #include "Range.h"
 #include "MethodAnalyzer.h"
-#include "../../../Architecture/OperableTypes/LanguageStructures/Structure.h"
+#include "../../../OmegaRuntime/Architecture/OperableTypes/LanguageStructures/Structure.h"
 
 Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespace, void* Runtime) {
     std::vector<Field> Fields;

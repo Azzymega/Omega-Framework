@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_ASSEMBLYANALYZER_H
 
 
-#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
-#include "../../../Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
 
 class AssemblyAnalyzer {
     static Assembly AnalyzeAssembly(Stack, void*);

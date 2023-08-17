@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_MODULEANALYZER_H
 
 
-#include "../../../Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../Architecture/OperableTypes/RuntimeAbstractions/Module.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaRuntime/Architecture/OperableTypes/RuntimeAbstractions/Module.h"
 
 class ModuleAnalyzer {
 public:

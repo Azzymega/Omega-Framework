@@ -5,11 +5,11 @@
 #include "CommandAnalyzer.h"
 #include "Range.h"
 #include "ParameterAnalyzer.h"
-#include "../../../Architecture/PrimitiveOperations/Add.h"
-#include "../../../Architecture/PrimitiveOperations/Pop.h"
-#include "../../../Architecture/PrimitiveOperations/ISLoad.h"
-#include "../../../Architecture/PrimitiveOperations/SILoad.h"
-#include "../../../Architecture/PrimitiveOperations/Sload.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveOperations/Add.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveOperations/Pop.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveOperations/ISLoad.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveOperations/SILoad.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveOperations/Sload.h"
 
 Command *CommandAnalyzer::AnalyzeCommand(Stack Data, void* Runtime) {
     int InstructionType = Data.GetCell(0).ReturnData();

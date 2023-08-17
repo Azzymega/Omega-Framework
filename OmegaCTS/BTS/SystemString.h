@@ -7,7 +7,7 @@
 
 
 #include "../Core/Type.h"
-#include "../Core/PString.h"
+#include "../Primitives/PString.h"
 
 class SystemString : public Type{
 public:

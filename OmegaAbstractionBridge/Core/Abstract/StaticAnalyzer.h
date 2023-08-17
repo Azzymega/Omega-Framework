@@ -6,7 +6,7 @@
 #define LIBRNT_STATICANALYZER_H
 
 
-#include "../../Core/Runtime.h"
+#include "../../../OmegaRuntime/Runtime/Core/Runtime.h"
 
 class StaticAnalyzer {
 public:

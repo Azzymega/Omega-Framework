@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_PARAMETERANALYZER_H
 
 
-#include "../../../Architecture/PrimitiveDataTypes/Stack.h"
-#include "../../../Architecture/OperableTypes/ObjectsPrimitives/Parameter.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaRuntime/Architecture/OperableTypes/ObjectsPrimitives/Parameter.h"
 #include <string>
 
 class ParameterAnalyzer {

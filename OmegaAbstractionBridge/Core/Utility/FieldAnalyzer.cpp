@@ -3,8 +3,8 @@
 //
 
 #include "FieldAnalyzer.h"
-#include "../../../../OmegaCTS/BTS/SystemString.h"
-#include "../../../../OmegaCTS/BTS/SystemInteger.h"
+#include "../../../OmegaCTS/BTS/SystemString.h"
+#include "../../../OmegaCTS/BTS/SystemInteger.h"
 
 Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void * Runtime) {
     /*

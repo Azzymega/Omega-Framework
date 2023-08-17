@@ -6,8 +6,8 @@
 #define LEGACYRUNTIME_COMMANDANALYZER_H
 
 
-#include "../../../Architecture/PrimitiveAbstractions/Command.h"
-#include "../../../Architecture/PrimitiveDataTypes/Stack.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveAbstractions/Command.h"
+#include "../../../OmegaRuntime/Architecture/PrimitiveDataTypes/Stack.h"
 
 class CommandAnalyzer {
 public:

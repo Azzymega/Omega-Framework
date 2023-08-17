@@ -7,7 +7,7 @@
 
 
 #include <string>
-#include "../Core/PInteger.h"
+#include "../Primitives/PInteger.h"
 #include "../Core/Type.h"
 
 class SystemInteger : public Type{
