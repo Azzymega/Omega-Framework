@@ -6,23 +6,22 @@
 #include "FieldAnalyzer.h"
 #include "Range.h"
 #include "MethodAnalyzer.h"
-#include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/LanguageStructures/Structure.h"
 
-Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespace, void* Runtime) {
+Object ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void *Runtime) {
     std::vector<Field> Fields;
     std::vector<Method> Methods;
     std::vector<Range> FieldsRanges;
     std::vector<Range> MethodsRanges;
     std::vector<Stack> FieldsStacks;
     std::vector<Stack> MethodsStacks;
-    std::string Name;
+    std::wstring Name;
     for (int i = 0; i < ObjectMemory.ReturnCellsSize(); ++i) {
         if (ObjectMemory.GetCell(i).ReturnData() == TokenTypes::ObjectNameStarts){
             for (int j = i; j < ObjectMemory.ReturnCellsSize(); ++j) {
                 if (ObjectMemory.GetCell(j).ReturnData() == TokenTypes::ObjectNameEnds){
                     break;
                 }
-                Name+=ObjectMemory.GetCell(j).ReturnData();
+                Name+=std::to_wstring(ObjectMemory.GetCell(j).ReturnData());
             }
             break;
         }
@@ -78,14 +77,11 @@ Object *ObjectAnalyzer::AnalyzeObject(Stack ObjectMemory, void * CurrentNamespac
     for (int i = 0; i < ObjectMemory.ReturnCellsSize(); ++i) {
         if (ObjectMemory.GetCell(i).ReturnData() == TokenTypes::ObjectType){
             switch (ObjectMemory.GetCell(i+1).ReturnData()) {
-                case STRUCT:{
-                    return new Structure(Name,CurrentNamespace,Fields,Methods);
-                }
                 default:{
-                    return new Class(Name,CurrentNamespace,Fields,Methods);
+                    return {Name,Fields,Methods};
                 }
             }
         }
     }
-    return nullptr;
+    return {L"NULL",Fields,Methods};
 }

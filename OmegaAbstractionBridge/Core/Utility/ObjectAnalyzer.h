@@ -12,7 +12,7 @@
 
 class ObjectAnalyzer {
 public:
-    static Object* AnalyzeObject(Stack, void*, void*);
+    static Object AnalyzeObject(Stack, void *);
 };
 
 

@@ -6,8 +6,8 @@
 #include "Range.h"
 
 Namespace NamespaceAnalyzer::AnalyzeNamespace(Stack NamespaceMemoryPack, void * Runtime) {
-    std::string Name;
-    std::vector<Object*> Objects;
+    std::wstring Name;
+    std::vector<Object> Objects;
     std::vector<Range> ObjectsRanges;
     std::vector<Stack> ObjectsStacks;
     for (int i = 0; i < NamespaceMemoryPack.ReturnCellsSize(); ++i) {
@@ -16,11 +16,11 @@ Namespace NamespaceAnalyzer::AnalyzeNamespace(Stack NamespaceMemoryPack, void * 
                 if (NamespaceMemoryPack.GetCell(j).ReturnData() == TokenTypes::NamespaceNameEnd){
                     break;
                 }
-                Name+=NamespaceMemoryPack.GetCell(j).ReturnData();
+                Name+=(wchar_t)NamespaceMemoryPack.GetCell(j).ReturnData();
             }
         }
     }
-    auto* CurrentNamespace = new Namespace(Name);
+    auto CurrentNamespace = Namespace(Name);
     for (int i = 0; i < NamespaceMemoryPack.ReturnCellsSize(); ++i) {
         if(NamespaceMemoryPack.GetCell(i).ReturnData() == ObjectStarts){
             Range CurrentRange = Range();
@@ -43,10 +43,10 @@ Namespace NamespaceAnalyzer::AnalyzeNamespace(Stack NamespaceMemoryPack, void * 
     }
     Objects.reserve(ObjectsStacks.size());
     for ( const Stack& Data : ObjectsStacks) {
-        Objects.push_back(ObjectAnalyzer::AnalyzeObject(Data,Runtime,CurrentNamespace));
+        Objects.push_back(ObjectAnalyzer::AnalyzeObject(Data, Runtime));
     }
-    for ( Object* Object : Objects) {
-        CurrentNamespace->AppendObject(Object);
+    for ( const Object& Object : Objects) {
+        CurrentNamespace.AppendObject(Object);
     }
-    return *CurrentNamespace;
+    return CurrentNamespace;
 }

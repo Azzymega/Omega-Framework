@@ -3,7 +3,7 @@
 //
 
 #include "ParameterAnalyzer.h"
-Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
+Parameter ParameterAnalyzer::AnalyzeParameter(const Stack& Data, void * Runtime) {
     /*
     int Number = Data.GetCell(0).ReturnData();
     switch (Data.GetCell(1).ReturnData()) {
@@ -23,7 +23,7 @@ Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
         }
         default:{
         */
-            return nullptr;
+            return Parameter(TypeT::OBJECT_WITH_FIELDS,L"NULL",0);
         }/*
     }
 }

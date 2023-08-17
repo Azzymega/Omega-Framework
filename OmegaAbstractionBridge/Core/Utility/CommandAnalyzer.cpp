@@ -5,15 +5,15 @@
 #include "CommandAnalyzer.h"
 #include "Range.h"
 #include "ParameterAnalyzer.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveOperations/Add.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveOperations/Pop.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveOperations/ISLoad.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveOperations/SILoad.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveOperations/Sload.h"
+#include "../../../OmegaRuntime/Runtime//PrimitiveOperations/Add.h"
+#include "../../../OmegaRuntime/Runtime/PrimitiveOperations/Pop.h"
+#include "../../../OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.h"
+#include "../../../OmegaRuntime/Runtime/PrimitiveOperations/SILoad.h"
+#include "../../../OmegaRuntime/Runtime/PrimitiveOperations/Sload.h"
 
 Command *CommandAnalyzer::AnalyzeCommand(Stack Data, void* Runtime) {
     int InstructionType = Data.GetCell(0).ReturnData();
-    std::vector<Parameter*> Parameters = std::vector<Parameter*>();
+    std::vector<Parameter> Parameters = std::vector<Parameter>();
     std::vector<Range> ParametersRanges = std::vector<Range>();
     std::vector<Stack> Stacks = std::vector<Stack>();
     for (int i = 0; i < Data.ReturnCellsSize(); ++i) {

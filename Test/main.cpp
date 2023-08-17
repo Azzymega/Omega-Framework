@@ -10,7 +10,7 @@ int main(){
     ff.push_back(Field(new SystemString(),
                        std::wstring((L"stroka"))));
     Object bb = Object(L"Main",ff,std::vector<Method>());
-    Namespace nn("Mainloxi");
+    Namespace nn(L"Mainloxi");
     std::vector<Namespace> xx;
     nn.AppendObject(bb);
     xx.push_back(nn);

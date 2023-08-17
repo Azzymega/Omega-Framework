@@ -13,7 +13,7 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
     std::vector<Range> ParametersRanges;
     std::vector<Range> InstructionRanges;
     std::string ReturnType;
-    std::vector<Parameter*> Params;
+    std::vector<Parameter> Params;
     std::vector<MethodParametersType> ParametersTypes;
     for (int i = 0; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
         if(MethodMemoryMap.GetCell(i).ReturnData() == MethodReturnTypeStarts){
@@ -87,7 +87,7 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
     for ( const Stack& Data : ParameterStacks) {
         Params.push_back(ParameterAnalyzer::AnalyzeParameter(Data,Runtime));
     }
-    for (Parameter* Param : Params) {
+    for (Parameter Param : Params) {
         CurrentMethod.AppendParameter(Param);
     }
     for (Command* Comm : Operations){

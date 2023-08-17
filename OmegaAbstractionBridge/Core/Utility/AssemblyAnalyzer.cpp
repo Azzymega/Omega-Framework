@@ -7,7 +7,7 @@
 #include "ModuleAnalyzer.h"
 
 Assembly AssemblyAnalyzer::AnalyzeAssembly(Stack AssemblyMemoryPack, void * Runtime) {
-    std::string Name;
+    std::wstring Name;
     std::vector<Range> ModuleRanges;
     std::vector<Stack> ModuleStacks;
     std::vector<Module> Modules;
@@ -17,7 +17,7 @@ Assembly AssemblyAnalyzer::AnalyzeAssembly(Stack AssemblyMemoryPack, void * Runt
                 if (AssemblyMemoryPack.GetCell(j).ReturnData() == TokenTypes::AssemblyNameEnds){
                     break;
                 }
-                Name+=AssemblyMemoryPack.GetCell(j).ReturnData();
+                Name+=(wchar_t)AssemblyMemoryPack.GetCell(j).ReturnData();
             }
         }
     }
