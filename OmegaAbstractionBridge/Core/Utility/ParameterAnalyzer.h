@@ -12,7 +12,7 @@
 
 class ParameterAnalyzer {
 public:
-    static Parameter AnalyzeParameter(const Stack&, void*);
+    static Parameter AnalyzeParameter(Stack, void*);
 };
 
 

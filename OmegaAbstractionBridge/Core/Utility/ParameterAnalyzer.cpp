@@ -3,28 +3,42 @@
 //
 
 #include "ParameterAnalyzer.h"
-Parameter ParameterAnalyzer::AnalyzeParameter(const Stack& Data, void * Runtime) {
-    /*
-    int Number = Data.GetCell(0).ReturnData();
-    switch (Data.GetCell(1).ReturnData()) {
-        case TString:{
-            std::vector<char> Characters = std::vector<char>();
-            for (int i = 2; i < Data.ReturnCellsSize(); ++i) {
-                Characters.push_back(Data.GetCell(i).ReturnData());
+Parameter ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
+    std::wstring TypeName;
+    std::wstring Name;
+    int Index = 0;
+    for (int i = 0; i < Data.ReturnCellsSize(); ++i) {
+        if(Data.GetCell(i).ReturnData() == ParameterTypeNameStart){
+            for (i++; i < Data.ReturnCellsSize(); ++i) {
+                if (Data.GetCell(i).ReturnData() == ParameterTypeNameEnds){
+                    break;
+                }
+                TypeName+=(wchar_t)Data.GetCell(i).ReturnData();
             }
-            return new StringParameters(String(Characters),Number);
+            break;
         }
-        case TInteger:{
-            std::string Digits;
-            for (int i = 2; i < Data.ReturnCellsSize(); ++i) {
-                Digits.push_back(Data.GetCell(i).ReturnData());
-            }
-            return new IntegerParameter(Integer(stoi(Digits)),Number);
-        }
-        default:{
-        */
-            return Parameter(TypeT::OBJECT_WITH_FIELDS,L"NULL",0);
-        }/*
     }
+    for (int i = 0; i < Data.ReturnCellsSize(); ++i) {
+        if(Data.GetCell(i).ReturnData() == ParameterNameStart){
+            for (i++; i < Data.ReturnCellsSize(); ++i) {
+                if (Data.GetCell(i).ReturnData() == ParameterNameEnds){
+                    break;
+                }
+                Name+=(wchar_t)Data.GetCell(i).ReturnData();
+            }
+            break;
+        }
+    }
+    for (int i = 0; i < Data.ReturnCellsSize(); ++i) {
+        if(Data.GetCell(i).ReturnData() == ParameterIndexStart){
+            for (i++; i < Data.ReturnCellsSize(); ++i) {
+                if (Data.GetCell(i).ReturnData() == ParameterIndexEnds){
+                    break;
+                }
+                Index+=Data.GetCell(i).ReturnData();
+            }
+            break;
+        }
+    }
+    return {TypeName,Name,Index};
 }
-*/

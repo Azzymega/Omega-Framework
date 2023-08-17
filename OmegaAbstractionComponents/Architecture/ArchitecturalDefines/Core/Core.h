@@ -51,10 +51,16 @@ enum TokenTypes { // Нужен общий рефакторинг. Положи�
     ModuleEnds = 3333,
     InstructionStarts = 99,
     InstructionEnds = 102,
-    InstructionParameterTypeStart = 115,
-    InstructionParameterTypeEnds = 114,
+    InstructionParameterStart = 115,
+    InstructionParameterEnds = 114,
     MethodReturnTypeStarts = 33333,
-    MethodReturnTypeEnds = 322456
+    MethodReturnTypeEnds = 322456,
+    ParameterTypeNameStart = -233232,
+    ParameterTypeNameEnds = -32323232,
+    ParameterNameStart = -3232,
+    ParameterNameEnds = -32321,
+    ParameterIndexStart = 9234,
+    ParameterIndexEnds = -2341
 };
 
 enum Microcode {

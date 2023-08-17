@@ -40,7 +40,7 @@ add_library(OmegaAbstractionBridge STATIC OmegaAbstractionBridge/Core/Utility/Co
         OmegaAbstractionBridge/Core/Utility/ModuleAnalyzer.h OmegaAbstractionBridge/Core/Utility/AssemblyAnalyzer.cpp
         OmegaAbstractionBridge/Core/Utility/MethodAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/MethodAnalyzer.h
         OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.cpp OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.h
-        OmegaAbstractionBridge/Core/Utility/AssemblyAnalyzer.h OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp)
+        OmegaAbstractionBridge/Core/Utility/AssemblyAnalyzer.h OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/CommandParameterAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/CommandParameterAnalyzer.h)
 add_library(OmegaRuntime STATIC
         OmegaRuntime/Runtime/Core/Runtime.cpp OmegaRuntime/Runtime/Core/Runtime.h OmegaRuntime/Runtime/PrimitiveOperations/Add.cpp
         OmegaRuntime/Runtime/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h

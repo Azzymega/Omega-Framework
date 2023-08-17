@@ -12,9 +12,10 @@
 
 class Parameter : public Type{
 protected:
+    std::wstring Name;
     int Number;
 public:
-    Parameter(TypeT currentType, std::wstring name, int Number);
+    Parameter(std::wstring TypeName,std::wstring Name, int Number);
 };
 
 

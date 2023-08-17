@@ -17,11 +17,11 @@ Command *CommandAnalyzer::AnalyzeCommand(Stack Data, void* Runtime) {
     std::vector<Range> ParametersRanges = std::vector<Range>();
     std::vector<Stack> Stacks = std::vector<Stack>();
     for (int i = 0; i < Data.ReturnCellsSize(); ++i) {
-        if(Data.GetCell(i).ReturnData() == InstructionParameterTypeStart){
+        if(Data.GetCell(i).ReturnData() == InstructionParameterStart){
             Range CurrentRange = Range();
             CurrentRange.Start = i++;
             for (int j = i; j < Data.ReturnCellsSize(); ++j) {
-                if (Data.GetCell(j).ReturnData() == InstructionParameterTypeEnds){
+                if (Data.GetCell(j).ReturnData() == InstructionParameterEnds){
                     i = j+1;
                     CurrentRange.End = j;
                 }

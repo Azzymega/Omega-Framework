@@ -4,6 +4,9 @@
 
 #include "Parameter.h"
 
-Parameter::Parameter(TypeT currentType, std::wstring name, int Number) : Type(currentType, name) {
+#include <utility>
+
+Parameter::Parameter(std::wstring TypeName, std::wstring Name, int Number) : Type(TypeT::OBJECT_WITH_FIELDS, std::move(TypeName)) {
     this->Number = Number;
+    this->Name = std::move(Name);
 }
