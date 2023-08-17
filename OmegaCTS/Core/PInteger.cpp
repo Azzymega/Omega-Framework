@@ -11,3 +11,7 @@ void *PInteger::ReturnData() {
 PInteger::PInteger(std::wstring name, int Data) : PrimitiveReturnables(PRIMITIVE_INTEGER, name) {
     this->Data = Data;
 }
+
+PInteger::PInteger() : PrimitiveReturnables(PRIMITIVE_INTEGER, std::wstring(reinterpret_cast<const wchar_t *>("null"))) {
+
+}

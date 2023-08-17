@@ -14,6 +14,7 @@ private:
 public:
     PInteger(std::wstring name, int Data);
     void * ReturnData() override;
+    PInteger();
 };
 
 

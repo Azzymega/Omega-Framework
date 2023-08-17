@@ -10,9 +10,7 @@ Word Add::PerformOperation() {
     SystemInteger* x = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
     SystemInteger* y = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
     static_cast<class Runtime*>(Runtime)->PushToStack
-            (new SystemInteger(std::to_wstring(static_cast<class Runtime*>(Runtime)->ReturnStackLength()),
-                    PInteger(std::to_wstring(static_cast<class Runtime*>(Runtime)->ReturnStackLength()),
-                            x->ReturnInt()+y->ReturnInt())));
+            (new SystemInteger(PRIMITIVE_INTEGER, std::wstring()));
     return 0;
 }
 

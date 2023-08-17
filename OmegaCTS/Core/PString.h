@@ -14,6 +14,7 @@ private:
 public:
     void * ReturnData() override;
     PString(std::wstring name, std::wstring Data);
+    PString();
 };
 
 

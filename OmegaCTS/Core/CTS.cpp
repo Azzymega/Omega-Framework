@@ -3,10 +3,17 @@
 //
 
 #include "CTS.h"
+#include "../BTS/SystemInteger.h"
+#include "../BTS/SystemString.h"
 
 #include <utility>
 
-CTS::CTS() = default;
+CTS::CTS() { // Инициализация самых примитивных типов
+    auto* Integer = new SystemInteger();
+    auto* String = new SystemString();
+    this->TypeList[Integer->ReturnName()] = Integer;
+    this->TypeList[String->ReturnName()] = String;
+}
 
 void CTS::AppendType(Object CurrentObject) {
     Type* CurrentType = ConstructType(std::move(CurrentObject));

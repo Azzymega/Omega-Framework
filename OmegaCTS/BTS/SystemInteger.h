@@ -12,8 +12,9 @@
 
 class SystemInteger : public Type{
 public:
-    SystemInteger(PInteger Integer);
+    SystemInteger();
     int ReturnInt();
+    void SetInt(int Data);
 };
 
 
