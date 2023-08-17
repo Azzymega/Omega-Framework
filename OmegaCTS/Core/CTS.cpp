@@ -23,6 +23,7 @@ Type *CTS::ConstructType(Object CurrentObject) {
     for ( Field CurrentField : CurrentObject.ReturnFields()) {
         CurrentType->AppendInternals(CurrentField.ReturnType());
     }
+    CurrentObject.SetTypeRepresentation(CurrentType);
     return CurrentType;
 }
 
