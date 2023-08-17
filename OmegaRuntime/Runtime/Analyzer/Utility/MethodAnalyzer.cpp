@@ -5,12 +5,11 @@
 #include "CommandAnalyzer.h"
 #include "MethodAnalyzer.h"
 #include "Range.h"
-#include "../../../Architecture/CTS/String.h"
-#include "../../../Architecture/CTS/Integer.h"
 
 class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) {
     std::vector<Command*> Operations;
     std::vector<Stack> InstructionsStack;
+    std::vector<Stack> ParameterStacks;
     std::vector<Range> ParametersRanges;
     std::vector<Range> InstructionRanges;
     std::string ReturnType;
@@ -69,22 +68,11 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
         }
     }
     for ( Range CurrentRange : ParametersRanges) {
-        switch (MethodMemoryMap.GetCell(CurrentRange.Start).ReturnData()) {
-            case TString:{
-                std::vector<char> Data;
-                for (int i = CurrentRange.Start+1; i < CurrentRange.End; ++i) {
-                    Data.push_back(MethodMemoryMap.GetCell(i).ReturnData());
-                }
-                Params.push_back(reinterpret_cast<Parameter *>(new String(Data)));
-                ParametersTypes.push_back(TString);
-                break;
-            }
-            case TInteger:{
-                Params.push_back(reinterpret_cast<Parameter *>(new Integer(
-                        MethodMemoryMap.GetCell(CurrentRange.Start + 1).ReturnData())));
-                ParametersTypes.push_back(TInteger);
-            }
+        Stack Data = Stack();
+        for (int i = CurrentRange.Start+1; i < CurrentRange.End; ++i) {
+            Data.AppendCell(Cell(MethodMemoryMap.GetCell(i).ReturnData()));
         }
+        ParameterStacks.push_back(Data);
     }
     for ( Range CurrentRange : InstructionRanges) {
         Stack Data = Stack();
@@ -96,14 +84,14 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
     for ( const Stack& Data : InstructionsStack) {
         Operations.push_back(CommandAnalyzer::AnalyzeCommand(Data,Runtime));
     }
-    for ( Parameter* Param : Params) {
+    for ( const Stack& Data : ParameterStacks) {
+        Params.push_back(ParameterAnalyzer::AnalyzeParameter(Data,Runtime));
+    }
+    for (Parameter* Param : Params) {
         CurrentMethod.AppendParameter(Param);
     }
     for (Command* Comm : Operations){
         CurrentMethod.AppendOperation(Comm);
-    }
-    for (MethodParametersType Type : ParametersTypes){
-        CurrentMethod.AppendParameterType(Type);
     }
     return CurrentMethod;
 }

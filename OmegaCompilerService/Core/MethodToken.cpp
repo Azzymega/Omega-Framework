@@ -7,3 +7,7 @@
 MethodToken::MethodToken(std::string unnamed, std::vector<char> unnamed1, std::string Name) : AbstractToken(unnamed, unnamed1) {
     this->ReturnType = ReturnType;
 }
+
+std::string MethodToken::ReturnStringType() {
+    return this->ReturnType;
+}

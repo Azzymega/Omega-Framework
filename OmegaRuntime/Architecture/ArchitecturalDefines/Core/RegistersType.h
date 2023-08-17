@@ -53,8 +53,6 @@ enum TokenTypes { // Нужен общий рефакторинг. Положи�
     InstructionEnds = 102,
     InstructionParameterTypeStart = 115,
     InstructionParameterTypeEnds = 114,
-    MethodTypeStarts = 324423,
-    MethodTypeEnds = 324422,
     MethodReturnTypeStarts = 33333,
     MethodReturnTypeEnds = 322456
 };

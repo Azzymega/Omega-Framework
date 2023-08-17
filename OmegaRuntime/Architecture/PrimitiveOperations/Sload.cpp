@@ -7,7 +7,8 @@
 #include <utility>
 
 Word Sload::PerformOperation() {
-    static_cast<class Runtime*>(Runtime)->PushToStack(Operands[0]->ReturnParameter());
+    /*
+    static_cast<class Runtime*>(Runtime)->PushToStack(Operands[0]->ReturnParameter());*/
     return 0;
 }
 

@@ -30,6 +30,7 @@ public:
     Registry* ReturnRegisters();
     void AddOperation(Command*);
     int GetInstructionPointer() const;
+    int ReturnStackLength();
     void SetInstructionPointer(int);
     std::vector<Archive*>* ReturnMemory();
     SystemCallManager* ReturnSystemCallManager();

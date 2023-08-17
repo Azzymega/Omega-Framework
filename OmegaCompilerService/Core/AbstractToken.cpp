@@ -8,3 +8,7 @@ AbstractToken::AbstractToken(std::string Name, std::vector<char> Internals) {
     this->Name = Name;
     this->Internals = Internals;
 }
+
+std::string AbstractToken::ReturnName() {
+    return this->Name;
+}

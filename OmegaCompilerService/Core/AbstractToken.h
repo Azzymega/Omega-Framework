@@ -15,6 +15,7 @@ protected:
     std::vector<char> Internals;
 public:
     AbstractToken(std::string, std::vector<char>);
+    std::string ReturnName();
 };
 
 

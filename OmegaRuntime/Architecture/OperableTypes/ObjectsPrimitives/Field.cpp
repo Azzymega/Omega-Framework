@@ -5,6 +5,6 @@
 #include "Field.h"
 
 Field::Field(struct Type * Data, std::string Name) {
-    this->Type = Data;
+    this->Type = reinterpret_cast<CTSObject *>(Data);
     this->Name = Name;
 }

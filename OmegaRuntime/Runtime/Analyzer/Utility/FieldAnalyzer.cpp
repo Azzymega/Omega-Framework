@@ -3,10 +3,11 @@
 //
 
 #include "FieldAnalyzer.h"
-#include "../../../Architecture/CTS/String.h"
-#include "../../../Architecture/CTS/Integer.h"
+#include "../../../../OmegaCTS/BTS/SystemString.h"
+#include "../../../../OmegaCTS/BTS/SystemInteger.h"
 
 Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void * Runtime) {
+    /*
     MethodParametersType Type;
     std::string FieldName;
     Type = static_cast<MethodParametersType>(FieldMemory.GetCell(1).ReturnData());
@@ -23,9 +24,10 @@ Field *FieldAnalyzer::AnalyzeField(Stack FieldMemory, void * Runtime) {
     }
     switch (Type) {
         case MethodParametersType::TString : {
-            return new Field(new String(std::vector<char>()),FieldName);
+            return new Field(new SystemString(std::vector<char>()),FieldName);
         }
         default:{}
-            return new Field(new Integer(0),FieldName);
+            return new Field(new SystemInteger(FieldName,PInteger()),FieldName);
     }
+     */
 }

@@ -12,10 +12,6 @@ void Method::AppendOperation(Command* Operation) {
     this->Operations.push_back(Operation);
 }
 
-void Method::AppendParameterType(std::string Type) {
-    this->ParametersTypes.push_back(Type);
-}
-
 Method::Method(std::string, std::string MethodParameterType) {
     this->Name = Name;
     this->ReturnType = MethodParameterType;
@@ -30,3 +26,4 @@ void Method::Execute() {
         Command->PerformOperation();
     }
 }
+

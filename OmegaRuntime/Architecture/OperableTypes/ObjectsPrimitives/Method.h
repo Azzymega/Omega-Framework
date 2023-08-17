@@ -15,7 +15,6 @@ private:
     std::string Name;
     std::string ReturnType;
     std::vector<Parameter*> Parameters;
-    std::vector<std::string> ParametersTypes;
     std::vector<Command*> Operations;
 public:
     Method(std::string,std::string);
@@ -23,7 +22,6 @@ public:
     std::string ReturnName();
     void AppendParameter(Parameter*);
     void AppendOperation(Command*);
-    void AppendParameterType(std::string);
 };
 
 

@@ -6,13 +6,17 @@
 #define LEGACYRUNTIME_PARAMETER_H
 
 
-#include "../../CTS/Type.h"
+#include <string>
+#include <vector>
+#include "../../../../OmegaCTS/Core/CTSObject.h"
 
 class Parameter {
 protected:
+    std::string TypeName;
     int Number;
+    std::vector<CTSObject*> IncludedTypes;
 public:
-    virtual Type* ReturnParameter() = 0;
+    virtual CTSObject* ReturnParameter() = 0;
 };
 
 

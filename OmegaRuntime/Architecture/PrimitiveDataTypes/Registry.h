@@ -9,19 +9,19 @@
 #include <map>
 #include "../PrimitiveAbstractions/Archive.h"
 #include "../ArchitecturalDefines/Core/RegistersType.h"
-#include "../../Architecture/CTS/Type.h"
+#include "../../../OmegaCTS/Core/CTSObject.h"
 
 class Registry : public Archive{
 private:
     int Counter;
-    std::map<int,Type*> Data;
+    std::map<int,CTSObject*> Data;
 public:
     Registry();
     void AppendCounter();
     int ReturnCounter();
-    void AddNote(int,Type*);
-    void SetNote(int,Type*);
-    Type* GetNote(int);
+    void AddNote(int, CTSObject*);
+    void SetNote(int, CTSObject*);
+    CTSObject* GetNote(int);
     void Clear();
 };
 

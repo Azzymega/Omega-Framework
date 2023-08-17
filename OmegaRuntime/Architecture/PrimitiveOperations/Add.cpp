@@ -3,15 +3,16 @@
 //
 
 #include "Add.h"
-#include "../CTS/Integer.h"
+#include "../../../OmegaCTS/BTS/SystemInteger.h"
 
 
 Word Add::PerformOperation() {
-    Type* x = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
-    Type* y = static_cast<class Runtime*>(Runtime)->GetTopAndPop();
+    SystemInteger* x = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
+    SystemInteger* y = static_cast<SystemInteger *>(static_cast<class Runtime *>(Runtime)->GetTopAndPop());
     static_cast<class Runtime*>(Runtime)->PushToStack
-            (new Integer(static_cast<class Integer*>(x)->ReturnData()
-                    +static_cast<class Integer*>(y)->ReturnData()));
+            (new SystemInteger(std::to_wstring(static_cast<class Runtime*>(Runtime)->ReturnStackLength()),
+                    PInteger(std::to_wstring(static_cast<class Runtime*>(Runtime)->ReturnStackLength()),
+                            x->ReturnInt()+y->ReturnInt())));
     return 0;
 }
 

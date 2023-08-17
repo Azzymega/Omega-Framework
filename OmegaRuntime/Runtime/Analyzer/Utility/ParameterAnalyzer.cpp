@@ -3,11 +3,8 @@
 //
 
 #include "ParameterAnalyzer.h"
-#include "../../../Architecture/CTS/String.h"
-#include "../../../Architecture/OperableTypes/CTSParameters/StringParameters.h"
-#include "../../../Architecture/OperableTypes/CTSParameters/IntegerParameter.h"
-
 Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
+    /*
     int Number = Data.GetCell(0).ReturnData();
     switch (Data.GetCell(1).ReturnData()) {
         case TString:{
@@ -25,7 +22,9 @@ Parameter *ParameterAnalyzer::AnalyzeParameter(Stack Data, void * Runtime) {
             return new IntegerParameter(Integer(stoi(Digits)),Number);
         }
         default:{
+        */
             return nullptr;
-        }
+        }/*
     }
 }
+*/

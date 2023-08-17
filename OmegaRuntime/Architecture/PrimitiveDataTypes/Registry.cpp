@@ -4,21 +4,21 @@
 
 #include "Registry.h"
 
-void Registry::AddNote(int FirstArgument, Type* SecondArgument) {
+void Registry::AddNote(int FirstArgument, CTSObject* SecondArgument) {
     this->Data[FirstArgument] = SecondArgument;
     AppendCounter();
 }
 
-Type* Registry::GetNote(int Index) {
+CTSObject* Registry::GetNote(int Index) {
     return this->Data[Index];
 }
 
 Registry::Registry() {
-    this->Data = std::map<int,Type*>();
+    this->Data = std::map<int,CTSObject*>();
     this->Counter = 0;
 }
 
-void Registry::SetNote(int FirstArgument, Type* SecondArgument) {
+void Registry::SetNote(int FirstArgument, CTSObject* SecondArgument) {
     this->Data[FirstArgument] = SecondArgument;
 }
 

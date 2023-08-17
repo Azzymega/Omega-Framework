@@ -60,3 +60,7 @@ Type* Runtime::GetTopAndPop() {
     return x;
 }
 
+int Runtime::ReturnStackLength() {
+    return this->Stack.size();
+}
+

@@ -3,14 +3,14 @@
 //
 
 #include "SILoad.h"
+#include "../../../OmegaCTS/BTS/SystemInteger.h"
 
 #include <utility>
-#include "../CTS/Integer.h"
 
 Word SILoad::PerformOperation() {
-    static_cast<class Runtime*>(Runtime)->
+    /*static_cast<class Runtime*>(Runtime)->
             PushToStack(static_cast<class Runtime*>(Runtime)->
-                    ReturnRegisters()->GetNote(reinterpret_cast<Integer*>(Operands[0]->ReturnParameter())->ReturnData()));
+                    ReturnRegisters()->GetNote(reinterpret_cast<SystemInteger*>(Operands[0]->ReturnParameter());*/
     return 0;
 }
 

@@ -6,8 +6,12 @@
 #define LEGACYRUNTIME_METHODSTACKFACTORY_H
 
 
-class MethodStackFactory {
+#include "AbstractStackFactory.h"
+#include "../Core/MethodToken.h"
 
+class MethodStackFactory : public AbstractStackFactory{ // Написать!!!
+public:
+    Stack BuildStack(MethodToken *, std::vector<Stack>, std::vector<Stack>);
 };
 
 

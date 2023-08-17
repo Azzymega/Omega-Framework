@@ -8,6 +8,7 @@
 
 #include "../../../Architecture/PrimitiveDataTypes/Stack.h"
 #include "../../../Architecture/OperableTypes/ObjectsPrimitives/Method.h"
+#include "ParameterAnalyzer.h"
 
 class MethodAnalyzer {
 public:
