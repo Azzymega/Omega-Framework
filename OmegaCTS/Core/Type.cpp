@@ -23,3 +23,11 @@ CTSObject *Type::ReturnParameterByName(std::wstring ParameterName) {
 CTSObject *Type::ReturnParameterByIndex(int ParameterIndex) {
     return Internals[ParameterIndex];
 }
+
+Type::Type(const Type &AType) : CTSObject(AType.CurrentType, AType.Name) {
+    this->Internals = AType.Internals;
+}
+
+std::vector<CTSObject *> Type::ReturnInternals() {
+    return Internals;
+}

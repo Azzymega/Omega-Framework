@@ -14,6 +14,7 @@ protected:
     CTSObject* Type;
     std::string Name;
 public:
+    CTSObject* ReturnType();
     Field(class Type*,std::string);
 };
 

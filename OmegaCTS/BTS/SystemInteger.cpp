@@ -4,8 +4,8 @@
 
 #include "SystemInteger.h"
 
-SystemInteger::SystemInteger(std::wstring name1, PInteger Integer)
-        : Type(OBJECT_WITH_FIELDS, name1) {
+SystemInteger::SystemInteger(PInteger Integer)
+        : Type(OBJECT_WITH_FIELDS, std::wstring(reinterpret_cast<const wchar_t *>("System::Integer"))) {
     this->Internals.push_back(&Integer);
 }
 

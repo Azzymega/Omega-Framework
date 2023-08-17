@@ -8,3 +8,7 @@ Field::Field(struct Type * Data, std::string Name) {
     this->Type = reinterpret_cast<CTSObject *>(Data);
     this->Name = Name;
 }
+
+CTSObject *Field::ReturnType() {
+    return Type;
+}

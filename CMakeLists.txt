@@ -5,7 +5,7 @@ set(CMAKE_CXX_FLAGS -static-libstdc++)
 set(CMAKE_CXX_FLAGS -Wall)
 set(CMAKE_CXX_STANDARD 17)
 set ( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON )
-add_library(OmegaCTS SHARED OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS/Core/ArchitecturalDefines.h OmegaCTS/Core/CTSObject.h OmegaCTS/Core/Object.cpp OmegaCTS/Core/PrimitiveReturnables.cpp OmegaCTS/Core/PrimitiveReturnables.h OmegaCTS/Core/PInteger.cpp OmegaCTS/Core/PInteger.h OmegaCTS/Core/PString.cpp OmegaCTS/Core/PString.h OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h)
+add_library(OmegaCTS SHARED OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS/Core/ArchitecturalDefines.h OmegaCTS/Core/CTSObject.h OmegaCTS/Core/Object.cpp OmegaCTS/Core/PrimitiveReturnables.cpp OmegaCTS/Core/PrimitiveReturnables.h OmegaCTS/Core/PInteger.cpp OmegaCTS/Core/PInteger.h OmegaCTS/Core/PString.cpp OmegaCTS/Core/PString.h OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h OmegaCTS/Core/CTS.cpp OmegaCTS/Core/CTS.h)
 add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/AbstractToken.cpp
         OmegaCompilerService/Core/AbstractToken.h OmegaCompilerService/Parsers/AbstractParser.cpp OmegaCompilerService/Parsers/AbstractParser.h OmegaCompilerService/Parsers/InstructionParser.cpp
         OmegaCompilerService/Parsers/InstructionParser.h OmegaCompilerService/Core/InstructionToken.cpp OmegaCompilerService/Core/InstructionToken.h OmegaCompilerService/Conglomerate/InstructionStackFactory.cpp

@@ -12,7 +12,7 @@
 
 class SystemInteger : public Type{
 public:
-    SystemInteger(std::wstring name1, PInteger Integer);
+    SystemInteger(PInteger Integer);
     int ReturnInt();
 };
 

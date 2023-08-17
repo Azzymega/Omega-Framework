@@ -15,6 +15,8 @@ protected:
 public:
     void AppendInternals(CTSObject* Object);
     Type(TypeT currentType, std::wstring name);
+    Type(const Type &);
+    std::vector<CTSObject*> ReturnInternals();
     CTSObject* ReturnParameterByName(std::wstring ParameterName);
     CTSObject* ReturnParameterByIndex(int ParameterIndex);
 };

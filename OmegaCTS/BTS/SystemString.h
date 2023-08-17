@@ -11,7 +11,7 @@
 
 class SystemString : public Type{
 public:
-    SystemString(std::wstring name, PString String);
+    SystemString(PString String);
 };
 
 
