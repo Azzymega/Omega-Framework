@@ -23,6 +23,9 @@ int main(){
     c.PushToStack(Tdf);
     Type* dqd = &(*(c.GetTop()));
     c.FreeMemory();
+    c.Duplicate();
+    c.PopStack();
+    c.FreeMemory();
     c.PopStack();
     c.FreeMemory();
     return 0;

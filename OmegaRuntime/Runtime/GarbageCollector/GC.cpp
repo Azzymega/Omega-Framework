@@ -7,7 +7,7 @@
 
 
 void GC::PopStack() {
-    Stack.top()->ReturnPointer();
+    Stack.top()->ReturnValue();
     Stack.pop();
 }
 
