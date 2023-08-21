@@ -19,7 +19,7 @@ private:
     std::vector<Assembly> LoadedAssemblies;
     SystemCallManager SCM;
     Registry Roll;
-    std::stack<Type*> Stack;
+    std::stack<Type*> Stack; // Устарело
     int InstructionPointer;
     std::vector<Archive*> Memory;
     std::vector<Command*> Operations;

@@ -28,7 +28,7 @@ add_library(OmegaCTS STATIC OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS
         OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h
         OmegaCTS/Core/CTS.h
         OmegaCTS/Core/CTS.cpp)
-add_executable(OM Test/main.cpp)
+add_executable(OM Test/main.cpp OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.cpp OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.h)
 add_library(OmegaAbstractionBridge STATIC OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp
         OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.h OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp
         OmegaAbstractionBridge/Core/Utility/ParameterAnalyzer.cpp
@@ -46,7 +46,7 @@ add_library(OmegaRuntime STATIC
         OmegaRuntime/Runtime/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h
         OmegaRuntime/Runtime/PrimitiveOperations/Sload.cpp OmegaRuntime/Runtime/PrimitiveOperations/Sload.h OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.cpp
         OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.h OmegaRuntime/Runtime/PrimitiveOperations/SILoad.cpp OmegaRuntime/Runtime/PrimitiveOperations/SILoad.h
-        OmegaRuntime/Runtime/PrimitiveOperations/Pop.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pop.h)
+        OmegaRuntime/Runtime/PrimitiveOperations/Pop.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pop.h OmegaRuntime/Runtime/GarbageCollector/GC.cpp OmegaRuntime/Runtime/GarbageCollector/GC.h)
 #[===[
 add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/AbstractToken.cpp
         OmegaCompilerService/Core/AbstractToken.h OmegaCompilerService/Parsers/AbstractParser.cpp OmegaCompilerService/Parsers/AbstractParser.h OmegaCompilerService/Parsers/InstructionParser.cpp

@@ -18,7 +18,7 @@ void CTS::AppendType(Object CurrentObject) {
     this->TypeList[CurrentType->ReturnName()] = CurrentType;
 }
 
-Type *CTS::ConstructType(Object CurrentObject) {
+Type* CTS::ConstructType(Object CurrentObject) {
     Type* CurrentType = new Type(OBJECT_WITH_FIELDS,CurrentObject.ReturnName());
     for ( Field CurrentField : CurrentObject.ReturnFields()) {
         CurrentType->AppendInternals(CurrentField.ReturnType());
