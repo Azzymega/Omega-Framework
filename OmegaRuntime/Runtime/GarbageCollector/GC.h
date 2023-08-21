@@ -11,14 +11,14 @@
 
 class GC {
 private:
-    std::stack<GCHandler> Stack;
+    std::vector<GCHandler> AllocatedChunks;
+    std::stack<GCHandler*> Stack;
 public:
     GC();
-    void FreeMemory(GCHandler);
-    Type* GetStackTop();
+    void FreeMemory();
     void PushToStack(Type*);
+    Type* GetTop();
     void PopStack();
-    Type* GetTopAndPop();
     Word ReturnStackLength();
 };
 

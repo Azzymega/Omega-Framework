@@ -28,7 +28,7 @@ add_library(OmegaCTS STATIC OmegaCTS/Core/Type.cpp OmegaCTS/Core/Type.h OmegaCTS
         OmegaCTS/BTS/SystemString.cpp OmegaCTS/BTS/SystemString.h OmegaCTS/BTS/SystemInteger.cpp OmegaCTS/BTS/SystemInteger.h
         OmegaCTS/Core/CTS.h
         OmegaCTS/Core/CTS.cpp)
-add_executable(OM Test/main.cpp OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.cpp OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.h)
+add_executable(OM Test/main.cpp)
 add_library(OmegaAbstractionBridge STATIC OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp
         OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.h OmegaAbstractionComponents/Architecture/OperableTypes/ObjectsPrimitives/Parameter.cpp
         OmegaAbstractionBridge/Core/Utility/ParameterAnalyzer.cpp
@@ -42,6 +42,7 @@ add_library(OmegaAbstractionBridge STATIC OmegaAbstractionBridge/Core/Utility/Co
         OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.cpp OmegaAbstractionBridge/Core/Abstract/StaticAnalyzer.h
         OmegaAbstractionBridge/Core/Utility/AssemblyAnalyzer.h OmegaAbstractionBridge/Core/Utility/CommandAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/CommandParameterAnalyzer.cpp OmegaAbstractionBridge/Core/Utility/CommandParameterAnalyzer.h)
 add_library(OmegaRuntime STATIC
+        OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.cpp OmegaRuntime/Runtime/GarbageCollector/OverAbstractions/GCHandler.h
         OmegaRuntime/Runtime/Core/Runtime.cpp OmegaRuntime/Runtime/Core/Runtime.h OmegaRuntime/Runtime/PrimitiveOperations/Add.cpp
         OmegaRuntime/Runtime/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h
         OmegaRuntime/Runtime/PrimitiveOperations/Sload.cpp OmegaRuntime/Runtime/PrimitiveOperations/Sload.h OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.cpp
@@ -75,3 +76,4 @@ target_link_libraries(OmegaAbstractionBridge PUBLIC OmegaRuntime)
 target_link_libraries(OmegaRuntime PUBLIC OmegaCTS)
 target_link_libraries(OmegaRuntime PUBLIC OmegaAbstractionComponents)
 target_link_libraries(OmegaRuntime PUBLIC OmegaAbstractionBridge)
+target_link_libraries(OM PUBLIC OmegaRuntime)

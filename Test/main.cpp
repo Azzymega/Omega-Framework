@@ -3,6 +3,7 @@
 //
 #include "../OmegaCTS/Core/CTS.h"
 #include "../OmegaCTS/BTS/SystemString.h"
+#include "../OmegaRuntime/Runtime/GarbageCollector/GC.h"
 
 int main(){
     CTS commonTS;
@@ -18,5 +19,11 @@ int main(){
     Assembly dx(std::wstring((L"asdf")),&dd);
     commonTS.InitializeAssemblyTypeSystem(dx);
     Type* Tdf = commonTS.ReturnAllocatedType(L"Main");
+    GC c = GC();
+    c.PushToStack(Tdf);
+    Type* dqd = &(*(c.GetTop()));
+    c.FreeMemory();
+    c.PopStack();
+    c.FreeMemory();
     return 0;
 }

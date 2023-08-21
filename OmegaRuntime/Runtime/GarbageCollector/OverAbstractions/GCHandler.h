@@ -9,15 +9,14 @@
 #include "../../../../OmegaAbstractionComponents/Architecture/ArchitecturalDefines/Core/Core.h"
 #include "../../../../OmegaCTS/Core/Type.h"
 
-class GCHandler {
+class GCHandler : public Type{
 private:
-    Type* Type;
     Word LinkCounter;
 public:
-    explicit GCHandler(class Type*);
+    explicit GCHandler(class Type *);
     [[nodiscard]] Word ReturnLinkCounter() const;
     class Type* ReturnValue();
-    class Type* CopyValue(class Type*);
+    Type *ReturnPointer();
 };
 
 
