@@ -30,7 +30,11 @@ void GC::FreeMemory() {
 }
 
 Type *GC::GetTop() {
-    return this->Stack.top()->ReturnValue();
+    return this->Stack.top();
+}
+
+void GC::Duplicate() {
+    Stack.emplace((GCHandler*)Stack.top()->ReturnPointer());
 }
 
 GC::GC() = default;

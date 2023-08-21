@@ -19,6 +19,7 @@ public:
     void PushToStack(Type*);
     Type* GetTop();
     void PopStack();
+    void Duplicate();
     Word ReturnStackLength();
 };
 

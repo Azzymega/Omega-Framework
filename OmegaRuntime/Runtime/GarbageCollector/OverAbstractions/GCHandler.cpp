@@ -12,11 +12,12 @@ Word GCHandler::ReturnLinkCounter() const {
     return this->LinkCounter;
 }
 
-class Type *GCHandler::ReturnValue() {
+class Type *GCHandler::ReturnPointer() {
+    LinkCounter++;
     return this;
 }
 
-class Type* GCHandler::ReturnPointer() {
+class Type* GCHandler::ReturnValue() {
     LinkCounter--;
     return this;
 }
