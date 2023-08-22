@@ -32,3 +32,12 @@ Type::Type(const Type &AType) : CTSObject(AType.CurrentType, AType.Name) {
 std::vector<CTSObject *> Type::ReturnInternals() {
     return Internals;
 }
+
+void Type::ChangeParameterByName(CTSObject* Parameter) {
+    for (CTSObject* Obj : Internals) {
+        if (Obj->ReturnName() == Parameter->ReturnName()){
+            free(Obj);
+            Obj = Parameter;
+        }
+    }
+}

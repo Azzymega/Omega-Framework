@@ -8,10 +8,6 @@ void Runtime::Execute() {
     LoadedAssemblies[0].ExecuteMain();
 }
 
-std::vector<Archive *> *Runtime::ReturnMemory() {
-    return &Memory;
-}
-
 Runtime::Runtime() {
     this->SCM = SystemCallManager();
     this->InstructionPointer = 0;
@@ -30,24 +26,20 @@ void Runtime::SetInstructionPointer(int instructionPointer) {
     this->InstructionPointer = instructionPointer;
 }
 
-void Runtime::AddOperation(Command * Operation) {
-    this->Operations.push_back(Operation);
-}
-
 SystemCallManager *Runtime::ReturnSystemCallManager() {
     return &SCM;
 }
 
 Type* Runtime::GetStackTop() {
-    return Stack.top();
+    return MemoryController.GetTop();
 }
 
 void Runtime::PopStack() {
-    Stack.pop();
+    MemoryController.PopStack();
 }
 
 void Runtime::PushToStack(Type* Data) {
-    Stack.push(Data);
+    MemoryController.PushToStack(Data);
 }
 
 void Runtime::LoadAssembly(Assembly Assembly) {
@@ -55,12 +47,16 @@ void Runtime::LoadAssembly(Assembly Assembly) {
 }
 
 Type* Runtime::GetTopAndPop() {
-    Type* x = Stack.top();
-    Stack.pop();
+    Type* x = MemoryController.GetTop();
+    PopStack();
     return x;
 }
 
 int Runtime::ReturnStackLength() {
-    return this->Stack.size();
+    return this->MemoryController.ReturnStackLength();
+}
+
+CTS *Runtime::ReturnCTS() {
+    return &this->CommonTypeSystem;
 }
 

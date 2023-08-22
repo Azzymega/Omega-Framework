@@ -12,22 +12,23 @@
 #include "../../../OmegaAbstractionComponents/Architecture/PrimitiveDataTypes/Registry.h"
 #include "../../../OmegaSoftwareALComponent/Manager/SystemCallManager.h"
 #include "../../../OmegaAbstractionComponents/Architecture/OperableTypes/RuntimeAbstractions/Assembly.h"
-#include "../../../OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h"
+#include "../GarbageCollector/GC.h"
+#include "../../../OmegaCTS/Core/CTS.h"
 
 class Runtime {
 private:
     std::vector<Assembly> LoadedAssemblies;
     SystemCallManager SCM;
     Registry Roll;
-    std::stack<Type*> Stack; // Устарело
+    CTS CommonTypeSystem;
+    GC MemoryController;
     int InstructionPointer;
-    std::vector<Archive*> Memory;
-    std::vector<Command*> Operations;
 public:
     Runtime();
     void LoadAssembly(Assembly);
     Registry* ReturnRegisters();
     void AddOperation(Command*);
+    CTS* ReturnCTS();
     int GetInstructionPointer() const;
     int ReturnStackLength();
     void SetInstructionPointer(int);

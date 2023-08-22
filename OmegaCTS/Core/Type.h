@@ -18,6 +18,7 @@ public:
     Type(const Type &);
     std::vector<CTSObject*> ReturnInternals();
     CTSObject* ReturnParameterByName(std::wstring ParameterName);
+    void ChangeParameterByName(CTSObject* Parameter);
     CTSObject* ReturnParameterByIndex(int ParameterIndex);
 };
 

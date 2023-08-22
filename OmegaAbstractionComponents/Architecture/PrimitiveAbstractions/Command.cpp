@@ -5,7 +5,7 @@
 #include "Command.h"
 
 Command::Command(std::vector<Parameter*> Operands, void * Runtime) {
-    this->Runtime = Runtime;
+    this->CurrentRuntime = Runtime;
     this->Operands = Operands;
 }
 

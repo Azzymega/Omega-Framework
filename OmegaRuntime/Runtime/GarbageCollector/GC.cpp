@@ -12,9 +12,9 @@ void GC::PopStack() {
 }
 
 void GC::PushToStack(Type * Type) {
-    GCHandler Handler = GCHandler(Type);
+    auto* Handler = new GCHandler(Type);
     AllocatedChunks.emplace_back(Handler);
-    Stack.emplace(&AllocatedChunks.back());
+    Stack.emplace(AllocatedChunks.back());
 }
 
 Word GC::ReturnStackLength() {
@@ -22,8 +22,9 @@ Word GC::ReturnStackLength() {
 }
 
 void GC::FreeMemory() {
-    for (int i = 0; i < AllocatedChunks.size(); ++i) {
-        if (AllocatedChunks[i].ReturnLinkCounter() == 0){
+    for (int i = 0; i < (int)AllocatedChunks.size(); ++i) {
+        if (AllocatedChunks[i]->ReturnLinkCounter() == 0){
+            free(AllocatedChunks[i]);
             AllocatedChunks.erase(AllocatedChunks.begin()+i);
         }
     }

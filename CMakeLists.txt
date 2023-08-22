@@ -47,7 +47,7 @@ add_library(OmegaRuntime STATIC
         OmegaRuntime/Runtime/PrimitiveOperations/Add.h OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.cpp OmegaAbstractionComponents/Architecture/PrimitiveAbstractions/Command.h
         OmegaRuntime/Runtime/PrimitiveOperations/Sload.cpp OmegaRuntime/Runtime/PrimitiveOperations/Sload.h OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.cpp
         OmegaRuntime/Runtime/PrimitiveOperations/ISLoad.h OmegaRuntime/Runtime/PrimitiveOperations/SILoad.cpp OmegaRuntime/Runtime/PrimitiveOperations/SILoad.h
-        OmegaRuntime/Runtime/PrimitiveOperations/Pop.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pop.h OmegaRuntime/Runtime/GarbageCollector/GC.cpp OmegaRuntime/Runtime/GarbageCollector/GC.h)
+        OmegaRuntime/Runtime/PrimitiveOperations/Pop.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pop.h OmegaRuntime/Runtime/GarbageCollector/GC.cpp OmegaRuntime/Runtime/GarbageCollector/GC.h OmegaRuntime/Runtime/PrimitiveOperations/Initobj.cpp OmegaRuntime/Runtime/PrimitiveOperations/Initobj.h OmegaRuntime/Runtime/PrimitiveOperations/Pushargs.cpp OmegaRuntime/Runtime/PrimitiveOperations/Pushargs.h)
 #[===[
 add_library(OmegaCompilerService SHARED OmegaCompilerService/Core/Compiler.cpp OmegaCompilerService/Core/Compiler.h OmegaCompilerService/Core/ArchitecturalDefines.h OmegaCompilerService/Core/AbstractToken.cpp
         OmegaCompilerService/Core/AbstractToken.h OmegaCompilerService/Parsers/AbstractParser.cpp OmegaCompilerService/Parsers/AbstractParser.h OmegaCompilerService/Parsers/InstructionParser.cpp

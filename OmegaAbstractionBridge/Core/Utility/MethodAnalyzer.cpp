@@ -42,11 +42,11 @@ class Method MethodAnalyzer::AnalyzeMethod(Stack MethodMemoryMap,void* Runtime) 
     }
     Method CurrentMethod = Method(MethodName,ReturnType);
     for (int i = 0; i < MethodMemoryMap.ReturnCellsSize(); ++i) {
-        if(MethodMemoryMap.GetCell(i).ReturnData() == MethodParameterStart){
+        if(MethodMemoryMap.GetCell(i).ReturnData() == ParameterStarts){
             Range CurrentRange = Range();
             CurrentRange.Start = i++;
             for (int j = i; j < MethodMemoryMap.ReturnCellsSize(); ++j) {
-                if (MethodMemoryMap.GetCell(j).ReturnData() == MethodParameterEnd){
+                if (MethodMemoryMap.GetCell(j).ReturnData() == ParameterEnds){
                     i = j+1;
                     CurrentRange.End = j;
                 }

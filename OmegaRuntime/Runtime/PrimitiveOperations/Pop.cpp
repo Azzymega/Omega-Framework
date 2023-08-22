@@ -5,7 +5,7 @@
 #include "Pop.h"
 
 Word Pop::PerformOperation() {
-    static_cast<class Runtime*>(Runtime)->PopStack();
+    static_cast<class Runtime*>(CurrentRuntime)->PopStack();
     return 0;
 }
 

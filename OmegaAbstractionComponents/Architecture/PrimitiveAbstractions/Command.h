@@ -11,7 +11,7 @@
 
 class Command {
 protected:
-    void* Runtime;
+    void* CurrentRuntime;
     std::vector<Parameter*> Operands;
 public:
     virtual Word PerformOperation() = 0;
