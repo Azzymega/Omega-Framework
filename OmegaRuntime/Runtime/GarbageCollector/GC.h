@@ -11,7 +11,7 @@
 
 class GC {
 private:
-    std::vector<GCHandler> AllocatedChunks;
+    std::vector<GCHandler*> AllocatedChunks;
     std::stack<GCHandler*> Stack;
 public:
     GC();
